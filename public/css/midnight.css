@@ -236,7 +236,7 @@ body {
 }
 .marquee-track {
   display: flex; width: max-content;
-  animation: scroll 30s linear infinite;
+  animation: scroll 15s linear infinite;
 }
 .marquee-item {
   display: flex; align-items: center; font-size: 0.9rem;
