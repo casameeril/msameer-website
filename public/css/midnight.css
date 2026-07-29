@@ -389,3 +389,74 @@ body {
   animation: panGlow2 15s ease-in-out infinite;
 }
 
+/* ══════════════════════════════════
+   MOBILE DRAWER FIX
+   ══════════════════════════════════ */
+.mobile-drawer {
+  position: fixed;
+  top: 0; right: -100%;
+  width: min(85vw, 320px);
+  height: 100vh;
+  background: var(--royal-blue);
+  z-index: 200;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+}
+.mobile-drawer.open {
+  right: 0;
+}
+.mobile-drawer .nav-link {
+  display: block;
+  color: #FFFFFF !important;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.mobile-drawer .nav-link:hover,
+.mobile-drawer .nav-link.active {
+  background: rgba(255,255,255,0.1);
+  color: var(--luxury-gold) !important;
+}
+.mobile-drawer .nav-link::after {
+  display: none;
+}
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 199;
+  display: none;
+}
+.mobile-drawer-overlay.open {
+  display: block;
+}
+
+/* ══════════════════════════════════
+   LOGO FIX FOR MOBILE
+   ══════════════════════════════════ */
+.nav-logo-img {
+  height: 44px !important;
+  width: 44px !important;
+  min-width: 44px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* ══════════════════════════════════
+   HERO SECTION MOBILE FIX
+   ══════════════════════════════════ */
+@media (max-width: 640px) {
+  .hero-section {
+    padding-bottom: 2rem;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+    min-height: 90px !important;
+  }
+}

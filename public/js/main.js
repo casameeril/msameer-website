@@ -65,20 +65,25 @@
   </div>
 </nav>
 
+<!-- Mobile Drawer Overlay -->
+<div id="mobile-overlay" class="mobile-drawer-overlay"></div>
+
 <!-- Mobile Drawer -->
 <div id="mobile-drawer" class="mobile-drawer md:hidden" aria-hidden="true">
   <button id="menu-close" class="absolute top-5 right-5 text-[#F6C90E] p-2" aria-label="Close menu">
     <span class="material-symbols-outlined text-3xl">close</span>
   </button>
-  <div class="flex items-center gap-3 mb-8 pb-6 border-b border-[rgba(255,255,255,0.1)]">
-    <img src="${LOGO_SRC}" alt="Logo" class="h-10 w-10 object-contain logo-glow"/>
+  <div class="flex items-center gap-3 mt-10 mb-6 pb-6 border-b border-[rgba(255,255,255,0.1)]">
+    <img src="${LOGO_SRC}" alt="Logo" class="h-12 w-12 object-contain rounded-md border border-white/20"/>
     <div>
       <p class="font-display text-lg text-white font-semibold">M Sameer &amp; Company</p>
       <p class="text-[10px] text-[#F6C90E] uppercase tracking-[0.2em]">Chartered Accountants</p>
     </div>
   </div>
+  <nav class="flex flex-col gap-1">
   ${mobileLinks}
-  <div class="mt-auto pt-8 flex flex-col gap-3">
+  </nav>
+  <div class="mt-8 pt-6 border-t border-white/10 flex flex-col gap-3">
     <a href="tel:${PHONE_NUMBER}" class="nav-call-btn justify-center px-6 py-3 text-sm">
       <span class="call-dot"></span>
       <span class="material-symbols-outlined text-[16px] filled">call</span>
@@ -167,10 +172,11 @@
   }
 
   function initNavBehavior() {
-    const nav    = document.getElementById("main-nav");
-    const toggle = document.getElementById("menu-toggle");
-    const close  = document.getElementById("menu-close");
-    const drawer = document.getElementById("mobile-drawer");
+    const nav     = document.getElementById("main-nav");
+    const toggle  = document.getElementById("menu-toggle");
+    const close   = document.getElementById("menu-close");
+    const drawer  = document.getElementById("mobile-drawer");
+    const overlay = document.getElementById("mobile-overlay");
 
     if (nav) {
       window.addEventListener("scroll", () => {
@@ -180,17 +186,20 @@
 
     function openMenu() {
       drawer?.classList.add("open");
+      overlay?.classList.add("open");
       drawer?.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
     function closeMenu() {
       drawer?.classList.remove("open");
+      overlay?.classList.remove("open");
       drawer?.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
     }
 
     toggle?.addEventListener("click", openMenu);
     close?.addEventListener("click", closeMenu);
+    overlay?.addEventListener("click", closeMenu);
     drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
   }
 

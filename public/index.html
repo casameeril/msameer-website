@@ -26,18 +26,32 @@
 <div class="absolute top-0 left-[-10%] w-[60%] h-[100%] bg-pink-200/60 blur-[120px] rounded-full z-[1] pointer-events-none glow-pan-1"></div>
 <div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[80%] bg-rose-200/50 blur-[100px] rounded-full z-[1] pointer-events-none glow-pan-2"></div>
 <div class="absolute inset-0 bg-white/40 backdrop-blur-[20px] z-[2]"></div>
-<div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 pt-24 pb-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="relative z-10 w-full max-w-[1280px] mx-auto px-4 sm:px-6 pt-24 pb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 <div class="fade-in">
-<p class="text-blue-700 uppercase tracking-[0.2em] text-xs font-bold mb-6">Chartered Accountant · Muzaffarnagar, U.P.</p>
-<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 mb-6 min-h-[140px] md:min-h-[160px]">
+<p class="text-blue-700 uppercase tracking-[0.2em] text-xs font-bold mb-4">Chartered Accountant · Muzaffarnagar, U.P.</p>
+<h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 mb-5 min-h-[110px] sm:min-h-[140px] md:min-h-[160px]">
 Fresh Eyes,<br/><span class="whitespace-nowrap"><span class="hero-gold-text" id="typewriter"></span><span class="typewriter-cursor">|</span></span>
 </h1>
-<ul class="text-slate-600 text-lg leading-relaxed max-w-xl mb-10 space-y-2 text-left inline-block">
+
+<!-- Mobile: Founder Photo (shows only on mobile) -->
+<div class="flex lg:hidden justify-center mb-6">
+  <div class="relative w-full max-w-[280px] sm:max-w-[320px] rounded-[1.25rem] p-[5px] animated-bg-frame shadow-xl">
+    <div class="w-full rounded-xl overflow-hidden border-[3px] border-white bg-white shadow-inner">
+      <img src="./Founder.jpeg" alt="CA Sameer Ilahi — Founder" class="w-full h-auto block"/>
+    </div>
+    <div class="text-center mt-3 bg-white rounded-lg px-4 py-2 border border-slate-100 shadow-sm">
+      <h3 class="font-display text-lg font-semibold text-slate-900">CA Sameer Ilahi</h3>
+      <p class="text-blue-700 text-[10px] uppercase tracking-[0.15em] font-semibold">Founder &amp; Principal Partner</p>
+    </div>
+  </div>
+</div>
+
+<ul class="text-slate-600 text-base leading-relaxed max-w-xl mb-8 space-y-2 text-left inline-block">
   <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-sm">check_circle</span> Freshly Qualified CA with Up-to-Date Knowledge</li>
   <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-sm">check_circle</span> Expert in Latest Tax Laws &amp; GST Reforms</li>
   <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-sm">check_circle</span> Modern, Tech-Savvy &amp; 100% Dedicated Approach</li>
 </ul>
-<div class="flex flex-col sm:flex-row gap-4 mb-10">
+<div class="flex flex-col sm:flex-row gap-4 mb-8">
 <a href="contact.html" class="btn-gold px-8 py-4 text-sm uppercase tracking-wider text-center">Book a Consultation</a>
 <a href="services.html" class="btn-outline px-8 py-4 text-sm uppercase tracking-wider text-center flex items-center justify-center gap-2">
 Explore Services <span class="material-symbols-outlined text-lg">arrow_forward</span>
@@ -94,7 +108,6 @@ Explore Services <span class="material-symbols-outlined text-lg">arrow_forward</
   <!-- Founder Photo Wrapper with animated border -->
   <div class="relative w-full rounded-[1.25rem] p-[6px] animated-bg-frame z-10 shadow-[0_20px_50px_rgba(10,25,49,0.15)] mb-4">
     <div class="w-full rounded-xl overflow-hidden border-[3px] border-white bg-white shadow-inner">
-      <!-- Natural height using h-auto block to prevent any cutting -->
       <img src="./Founder.jpeg" alt="CA Sameer Ilahi — Founder" class="w-full h-auto block"/>
     </div>
   </div>
