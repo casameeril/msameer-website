@@ -86,7 +86,7 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
   };
 
   try {
-    const res = await fetch('http://localhost:3000/api/consultations', {
+    const res = await fetch('https://msameer-backend.onrender.com/api/consultations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)

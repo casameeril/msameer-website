@@ -38,7 +38,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('services-grid');
   try {
-    const res = await fetch('http://localhost:3000/api/services');
+    const res = await fetch('https://msameer-backend.onrender.com/api/services');
     if (!res.ok) throw new Error('Failed to load');
     const services = await res.json();
     

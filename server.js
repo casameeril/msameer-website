@@ -187,7 +187,7 @@ app.post('/api/consultations', async (req, res) => {
         <p><strong>Service Needed:</strong> ${service || 'N/A'}</p>
         <p><strong>Message:</strong><br/>${message || 'N/A'}</p>
         <hr/>
-        <p><a href="http://localhost:3000/admin">Click here to view in Admin Panel</a></p>
+        <p><a href="https://www.casameerilahi.com/admin">Click here to view in Admin Panel</a></p>
       `
     };
     await mailTransporter.sendMail(mailOptions);
