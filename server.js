@@ -190,9 +190,9 @@ app.post('/api/consultations', async (req, res) => {
   
   await db.collection('consultations').doc(entry.id).set(entry);
 
-  // Send Email Notification to Admin
-  try {
-    const mailOptions = {
+  // Send Email Notification to Admin (Run in background, don't await)
+  if (process.env.GMAIL_APP_PASSWORD) {
+    mailTransporter.sendMail({
       from: '"M Sameer & Co. Website" <Casameerilahi@gmail.com>',
       to: 'Casameerilahi@gmail.com',
       subject: `New Consultation Request from ${name}`,
@@ -206,37 +206,31 @@ app.post('/api/consultations', async (req, res) => {
         <hr/>
         <p><a href="https://www.casameerilahi.com/admin">Click here to view in Admin Panel</a></p>
       `
-    };
-    await mailTransporter.sendMail(mailOptions);
-  } catch (mailError) {
-    console.error("Failed to send notification email:", mailError);
+    }).catch(err => console.error("Admin Email Error:", err));
+  } else {
+    console.error("GMAIL_APP_PASSWORD not set, skipping admin email");
   }
 
-  // Send Auto-Reply to User
-  if (email) {
-    try {
-      const userMailOptions = {
-        from: '"M Sameer & Company" <Casameerilahi@gmail.com>',
-        to: email,
-        subject: 'Thank you for contacting M Sameer & Company',
-        html: `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <h2>Thank You for Connecting with Us</h2>
-            <p>Dear ${name},</p>
-            <p>We have successfully received your consultation request regarding <strong>${service || 'our services'}</strong>.</p>
-            <p>Our team of financial experts is reviewing your query and will reach out to you within the next <strong>24 hours</strong> on your provided mobile number (${phone}).</p>
-            <br>
-            <p>Best Regards,</p>
-            <p><strong>M Sameer & Company</strong><br>
-            Chartered Accountants<br>
-            <a href="https://www.casameerilahi.com">www.casameerilahi.com</a></p>
-          </div>
-        `
-      };
-      await mailTransporter.sendMail(userMailOptions);
-    } catch (userMailError) {
-      console.error("Failed to send auto-reply email to user:", userMailError);
-    }
+  // Send Auto-Reply to User (Run in background, don't await)
+  if (email && process.env.GMAIL_APP_PASSWORD) {
+    mailTransporter.sendMail({
+      from: '"M Sameer & Company" <Casameerilahi@gmail.com>',
+      to: email,
+      subject: 'Thank you for contacting M Sameer & Company',
+      html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+          <h2>Thank You for Connecting with Us</h2>
+          <p>Dear ${name},</p>
+          <p>We have successfully received your consultation request regarding <strong>${service || 'our services'}</strong>.</p>
+          <p>Our team of financial experts is reviewing your query and will reach out to you within the next <strong>24 hours</strong> on your provided mobile number (${phone}).</p>
+          <br>
+          <p>Best Regards,</p>
+          <p><strong>M Sameer & Company</strong><br>
+          Chartered Accountants<br>
+          <a href="https://www.casameerilahi.com">www.casameerilahi.com</a></p>
+        </div>
+      `
+    }).catch(err => console.error("User Email Error:", err));
   }
 
   res.json({ success: true, id: entry.id });
