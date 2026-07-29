@@ -30,14 +30,14 @@
 
     placeholder.outerHTML = `
 <nav class="fixed top-0 w-full z-50 glass-nav" id="main-nav">
-  <div class="flex justify-between items-center px-6 py-3.5 max-w-[1280px] mx-auto gap-4">
+  <div class="flex items-center justify-between px-4 py-3 max-w-[1280px] mx-auto">
 
-    <!-- Brand -->
-    <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-      <img alt="M Sameer &amp; Company Logo" class="nav-logo-img h-11 w-11 object-contain" src="${LOGO_SRC}"/>
-      <div class="hidden sm:block leading-tight">
-        <span class="nav-brand-text block">M Sameer &amp; Company</span>
-        <span class="nav-brand-sub">Chartered Accountants</span>
+    <!-- Brand (always visible) -->
+    <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
+      <img alt="M Sameer Logo" class="nav-logo-img" src="${LOGO_SRC}"/>
+      <div class="leading-tight">
+        <span class="nav-brand-text block text-[0.95rem] sm:text-[1.1rem]">M Sameer &amp; Company</span>
+        <span class="nav-brand-sub text-[0.55rem] sm:text-[0.65rem]">Chartered Accountants</span>
       </div>
     </a>
 
@@ -46,7 +46,7 @@
       ${desktopLinks}
     </div>
 
-    <!-- CTA Actions -->
+    <!-- CTA Actions (desktop only) -->
     <div class="hidden md:flex items-center gap-3 flex-shrink-0">
       <a href="contact.html" class="btn-gold px-6 py-2.5 text-xs uppercase tracking-wider">
         Book Consultation
@@ -58,10 +58,15 @@
       </a>
     </div>
 
-    <!-- Mobile Toggle -->
-    <button id="menu-toggle" class="md:hidden text-[#F6C90E] p-2 ml-auto" aria-label="Open menu">
-      <span class="material-symbols-outlined text-3xl">menu</span>
-    </button>
+    <!-- Mobile: Call icon + hamburger -->
+    <div class="flex md:hidden items-center gap-2">
+      <a href="tel:${PHONE_NUMBER}" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#0A1931] text-white">
+        <span class="material-symbols-outlined text-[18px] filled">call</span>
+      </a>
+      <button id="menu-toggle" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#F6C90E]" aria-label="Open menu">
+        <span class="material-symbols-outlined text-[22px] text-[#0A1931]">menu</span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -250,26 +255,31 @@
       "Partnership Firms",
     ]);
 
-    // Typewriter effect
-    const twEl = document.getElementById("typewriter");
-    if (twEl) {
+    // Typewriter effect - works on both mobile and desktop
+    const twEls = [
+      document.getElementById("typewriter"),
+      document.getElementById("typewriter-desktop")
+    ].filter(Boolean);
+
+    if (twEls.length > 0) {
       const words = ["Sharper Results.", "Modern Solutions.", "Premium Advisory.", "RVSF Expertise.", "Trusted Partner."];
       let i = 0;
       let timer;
+      function setAll(text) { twEls.forEach(el => el.innerHTML = text); }
       function typeWriter(word, index, cb) {
         if (index < word.length) {
-          twEl.innerHTML = word.substring(0, index + 1);
+          setAll(word.substring(0, index + 1));
           timer = setTimeout(() => typeWriter(word, index + 1, cb), 100);
         } else {
-          timer = setTimeout(cb, 2000); // pause at end
+          timer = setTimeout(cb, 2000);
         }
       }
       function deleteWriter(word, index, cb) {
         if (index >= 0) {
-          twEl.innerHTML = word.substring(0, index);
+          setAll(word.substring(0, index));
           timer = setTimeout(() => deleteWriter(word, index - 1, cb), 50);
         } else {
-          timer = setTimeout(cb, 500); // pause before next word
+          timer = setTimeout(cb, 500);
         }
       }
       function loop() {
