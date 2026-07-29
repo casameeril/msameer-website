@@ -28,15 +28,15 @@ const db = getFirestore();
 const mailTransporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'Casameerilahi@gmail.com',
-    pass: 'adce ncyammnqfxtq'.replace(/\s/g, '')
+    user: process.env.GMAIL_USER || 'Casameerilahi@gmail.com',
+    pass: process.env.GMAIL_APP_PASSWORD
   }
 });
 
 // Admin credentials (hashed)
 const ADMIN = {
-  username: 'admin',
-  password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password: "password"
+  username: 'sameer@0111',
+  password: '$2b$10$TgpKvJrcEABUCG5bXGw5/uBDlFpYV6LVWICb.ypjF.TB.jhLLOzAi' // password: "Sameer@100"
 };
 
 // Middleware
