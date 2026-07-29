@@ -1,0 +1,5 @@
+node_modules/
+.env
+m-sameer-co-firebase-adminsdk-fbsvc-973300f9bd.json
+uploads/
+.DS_Store

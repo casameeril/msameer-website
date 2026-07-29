@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Who We Help - M Sameer &amp; Company</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#82f9c2",
+                        "tertiary": "#006c4a",
+                        "surface-container": "#efeeeb",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1a1c1a",
+                        "surface-container-low": "#f4f3f1",
+                        "on-surface-variant": "#4e4634",
+                        "on-primary-fixed-variant": "#584400",
+                        "secondary": "#535f6f",
+                        "primary-fixed-dim": "#f0c12c",
+                        "surface-bright": "#faf9f6",
+                        "on-secondary-fixed-variant": "#3c4857",
+                        "on-primary-fixed": "#241a00",
+                        "outline-variant": "#d1c5ad",
+                        "background": "#faf9f6",
+                        "primary-fixed": "#ffdf90",
+                        "on-secondary-container": "#576474",
+                        "inverse-surface": "#2f312f",
+                        "primary-container": "#f4c430",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e3e2e0",
+                        "tertiary-container": "#68dfab",
+                        "surface-container-high": "#e9e8e5",
+                        "on-tertiary-container": "#006142",
+                        "secondary-fixed": "#d7e3f6",
+                        "outline": "#807661",
+                        "on-secondary-fixed": "#101c2a",
+                        "secondary-container": "#d4e1f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#f0c12c",
+                        "inverse-on-surface": "#f1f1ee",
+                        "secondary-fixed-dim": "#bbc7da",
+                        "on-primary-container": "#695200",
+                        "on-background": "#1a1c1a",
+                        "surface-variant": "#e3e2e0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#002114",
+                        "tertiary-fixed-dim": "#65dca8",
+                        "surface-tint": "#755b00",
+                        "primary": "#755b00",
+                        "on-error": "#ffffff",
+                        "surface": "#faf9f6",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005237"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "section-gap-mobile": "64px",
+                        "container-max": "1280px",
+                        "card-padding": "32px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "nav-link": ["Manrope"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-xl-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "nav-link": ["15px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .layer-base {
+            background-color: theme('colors.surface');
+            position: relative;
+            overflow: hidden;
+        }
+        .layer-base::before, .layer-base::after {
+            content: '';
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .layer-base::before {
+            background-color: theme('colors.primary-container');
+            top: -20vw;
+            left: -20vw;
+        }
+        .layer-base::after {
+            background-color: theme('colors.secondary');
+            bottom: -20vw;
+            right: -20vw;
+        }
+        .content-relative {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card-extruded {
+            background-color: theme('colors.surface-container-lowest');
+            box-shadow: 0 10px 30px -5px rgba(83, 95, 111, 0.1), 0 4px 6px -2px rgba(244, 196, 48, 0.05);
+            transition: all 0.3s ease;
+        }
+        .card-extruded:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(83, 95, 111, 0.15), 0 8px 12px -4px rgba(244, 196, 48, 0.1);
+        }
+        
+        .icon-chip {
+            background-color: rgba(244, 196, 48, 0.1);
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, theme('colors.primary-container'), theme('colors.primary-fixed'));
+            color: theme('colors.on-primary-container');
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary:hover {
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="layer-base text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/60 dark:bg-inverse-surface/60 backdrop-blur-md border-b border-outline-variant/10 shadow-sm transition-all duration-300" id="navbar">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="M Sameer &amp; Company Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP03Aly2p7D4cP8lIvOz5Lu0nzmOIgxUGJ5_5yWuWb0NwkRlLif4ZAmlosLfTHVUY-VvQqHZkNiDY3asa4WoaMIjAeJ2iq6TIZFt4iX22Y_6EjQtJmZOwzpkhLLDBcmYMckg9_j6EtHIG_Ml_vGi2CvSHpsiOQzhaWq9plenroHftkVM1DCyQMBaw8e5nW-39AadEeJrP3wfF3jkYp7jIy909DGhy9tds7Vu8GIVaqjGkA-kCfNpLh"/>
+<span class="text-body-lg font-bold text-secondary dark:text-secondary-fixed">M Sameer &amp; Company</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Home</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">About</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Services</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Online Tools</a>
+<a class="font-nav-link text-nav-link text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300" href="#">Who We Help</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Resources</a>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button class="font-nav-link text-nav-link text-secondary border-2 border-secondary rounded-full px-6 py-2 hover:bg-secondary hover:text-white transition-colors duration-300">WhatsApp</button>
+<button class="font-nav-link text-nav-link btn-primary rounded-full px-6 py-2 font-bold">Book a Consultation</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="content-relative flex-grow pt-[120px] pb-section-gap px-gutter max-w-container-max mx-auto w-full">
+<!-- Hero Section -->
+<section class="text-center mb-section-gap mt-16 md:mt-24 max-w-3xl mx-auto">
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-stack-lg">Tailored Solutions for Every Sector.</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-8">We understand that financial complexity varies drastically across different landscapes. Our bespoke approach ensures specialized expertise tailored specifically to your operational scale and domain.</p>
+</section>
+<!-- Bento Grid / Cards Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- SME Card -->
+<div class="card-extruded rounded-xl p-card-padding flex flex-col h-full">
+<div class="icon-chip mb-stack-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">factory</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Small &amp; Medium Enterprises (SMEs)</h3>
+<p class="text-secondary flex-grow mb-stack-md">Navigating growth with scalable accounting, tax optimization, and rigorous compliance strategies designed to fuel your upward trajectory.</p>
+<a class="text-primary font-bold inline-flex items-center hover:opacity-80 transition-opacity" href="#">
+                    Learn More <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Corporate Houses -->
+<div class="card-extruded rounded-xl p-card-padding flex flex-col h-full">
+<div class="icon-chip mb-stack-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">domain</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Corporate Houses</h3>
+<p class="text-secondary flex-grow mb-stack-md">Comprehensive audit, risk advisory, and complex corporate tax structuring to safeguard assets and ensure robust governance at scale.</p>
+<a class="text-primary font-bold inline-flex items-center hover:opacity-80 transition-opacity" href="#">
+                    Learn More <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- HNIs -->
+<div class="card-extruded rounded-xl p-card-padding flex flex-col h-full">
+<div class="icon-chip mb-stack-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">High Net-worth Individuals (HNIs)</h3>
+<p class="text-secondary flex-grow mb-stack-md">Discreet wealth management consulting, succession planning, and sophisticated personal tax filing to protect and optimize your legacy.</p>
+<a class="text-primary font-bold inline-flex items-center hover:opacity-80 transition-opacity" href="#">
+                    Learn More <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Startups -->
+<div class="card-extruded rounded-xl p-card-padding flex flex-col h-full">
+<div class="icon-chip mb-stack-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Startups</h3>
+<p class="text-secondary flex-grow mb-stack-md">Agile financial modeling, valuation services, and investor-ready reporting to support fundraising and rapid expansion phases.</p>
+<a class="text-primary font-bold inline-flex items-center hover:opacity-80 transition-opacity" href="#">
+                    Learn More <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- NGOs -->
+<div class="card-extruded rounded-xl p-card-padding flex flex-col h-full">
+<div class="icon-chip mb-stack-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">diversity_1</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Non-Profit Organizations (NGOs)</h3>
+<p class="text-secondary flex-grow mb-stack-md">Specialized statutory audits, grant utilization tracking, and FCRA compliance to ensure absolute transparency and sustained trust.</p>
+<a class="text-primary font-bold inline-flex items-center hover:opacity-80 transition-opacity" href="#">
+                    Learn More <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- NRI Clients -->
+<div class="card-extruded rounded-xl p-card-padding flex flex-col h-full">
+<div class="icon-chip mb-stack-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">NRI Clients</h3>
+<p class="text-secondary flex-grow mb-stack-md">Seamless cross-border taxation, FEMA compliance, and reliable local representation to manage investments and obligations remotely.</p>
+<a class="text-primary font-bold inline-flex items-center hover:opacity-80 transition-opacity" href="#">
+                    Learn More <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-secondary dark:bg-on-secondary-fixed mt-auto z-10 relative">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-gutter py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<h2 class="text-headline-md font-headline-md text-on-secondary mb-4">M Sameer &amp; Company</h2>
+<p class="font-body-md text-body-md text-primary-fixed mb-4">
+                    © 2024 M Sameer &amp; Company. Chartered Accountants. All rights reserved. FRN/MRN Certified.
+                </p>
+</div>
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary opacity-70 mb-4">Navigation</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded" href="#">Sitemap</a></li>
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded" href="#">Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary opacity-70 mb-4">Legal</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary opacity-70 mb-4">Connect</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.style.background = 'rgba(255, 255, 255, 0.85)';
+                nav.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.05)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.6)';
+                nav.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resources - M Sameer &amp; Company</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#82f9c2",
+                        "tertiary": "#006c4a",
+                        "surface-container": "#efeeeb",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1a1c1a",
+                        "surface-container-low": "#f4f3f1",
+                        "on-surface-variant": "#4e4634",
+                        "on-primary-fixed-variant": "#584400",
+                        "secondary": "#535f6f",
+                        "primary-fixed-dim": "#f0c12c",
+                        "surface-bright": "#faf9f6",
+                        "on-secondary-fixed-variant": "#3c4857",
+                        "on-primary-fixed": "#241a00",
+                        "outline-variant": "#d1c5ad",
+                        "background": "#faf9f6",
+                        "primary-fixed": "#ffdf90",
+                        "on-secondary-container": "#576474",
+                        "inverse-surface": "#2f312f",
+                        "primary-container": "#f4c430",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e3e2e0",
+                        "tertiary-container": "#68dfab",
+                        "surface-container-high": "#e9e8e5",
+                        "on-tertiary-container": "#006142",
+                        "secondary-fixed": "#d7e3f6",
+                        "outline": "#807661",
+                        "on-secondary-fixed": "#101c2a",
+                        "secondary-container": "#d4e1f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#f0c12c",
+                        "inverse-on-surface": "#f1f1ee",
+                        "secondary-fixed-dim": "#bbc7da",
+                        "on-primary-container": "#695200",
+                        "on-background": "#1a1c1a",
+                        "surface-variant": "#e3e2e0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#002114",
+                        "tertiary-fixed-dim": "#65dca8",
+                        "surface-tint": "#755b00",
+                        "primary": "#755b00",
+                        "on-error": "#ffffff",
+                        "surface": "#faf9f6",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005237"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "section-gap-mobile": "64px",
+                        "container-max": "1280px",
+                        "card-padding": "32px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "nav-link": ["Manrope"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-xl-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "nav-link": ["15px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .tactile-card {
+            box-shadow: 0 10px 30px -10px rgba(16, 28, 42, 0.1), 0 4px 6px -2px rgba(244, 196, 48, 0.05);
+            transition: all 0.3s ease;
+        }
+        .tactile-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(16, 28, 42, 0.15), 0 8px 12px -4px rgba(244, 196, 48, 0.1);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            box-sizing: content-box;
+            white-space: nowrap;
+        }
+        .ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 100%;
+            box-sizing: content-box;
+            animation: ticker 30s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+        .bg-blob-1 {
+            background: radial-gradient(circle, rgba(244,196,48,0.1) 0%, rgba(250,249,246,0) 70%);
+        }
+        .bg-blob-2 {
+            background: radial-gradient(circle, rgba(16,28,42,0.05) 0%, rgba(250,249,246,0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased relative overflow-x-hidden min-h-screen">
+<!-- Background Blobs -->
+<div class="absolute top-0 left-0 w-[800px] h-[800px] bg-blob-1 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none z-0"></div>
+<div class="absolute bottom-0 right-0 w-[1000px] h-[1000px] bg-blob-2 translate-x-1/3 translate-y-1/3 rounded-full pointer-events-none z-0"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/60 dark:bg-inverse-surface/60 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<img alt="M Sameer &amp; Company Logo" class="h-10 w-10 object-contain rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP03Aly2p7D4cP8lIvOz5Lu0nzmOIgxUGJ5_5yWuWb0NwkRlLif4ZAmlosLfTHVUY-VvQqHZkNiDY3asa4WoaMIjAeJ2iq6TIZFt4iX22Y_6EjQtJmZOwzpkhLLDBcmYMckg9_j6EtHIG_Ml_vGi2CvSHpsiOQzhaWq9plenroHftkVM1DCyQMBaw8e5nW-39AadEeJrP3wfF3jkYp7jIy909DGhy9tds7Vu8GIVaqjGkA-kCfNpLh"/>
+<span class="text-body-lg font-bold text-secondary dark:text-secondary-fixed">M Sameer &amp; Company</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8">
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Home</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">About</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Services</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Online Tools</a>
+<a class="font-nav-link text-nav-link text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] duration-300" href="#">Who We Help</a>
+<a class="font-nav-link text-nav-link text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300" href="#">Resources</a>
+</nav>
+<div class="hidden lg:flex items-center gap-4">
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#">WhatsApp</a>
+<a class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-nav-link text-nav-link hover:shadow-lg transition-shadow" href="#">Book a Consultation</a>
+</div>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-secondary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="relative z-10 pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter text-center mb-section-gap">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-stack-md">Insights and Financial Intelligence.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">Expert perspectives, compliance updates, and practical resources to navigate the complexities of modern finance and taxation.</p>
+</section>
+<!-- Updates Ticker -->
+<div class="w-full bg-surface-container-high py-3 border-y border-outline-variant/30 mb-section-gap shadow-inner overflow-hidden">
+<div class="ticker-wrap flex items-center h-6">
+<div class="ticker font-nav-link text-nav-link text-on-surface-variant flex gap-8 items-center">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="notifications_active">notifications_active</span> GST GSTR-1 Due Date Extended to 15th Oct.</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="description">description</span> New Circular on Income Tax Assessments Released.</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="event">event</span> Advance Tax Q2 Installment Deadline Approaching.</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="gavel">gavel</span> Changes in TDS rates effective next month.</span>
+</div>
+</div>
+</div>
+<!-- Insights Grid -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg border-b border-outline-variant/20 pb-4">Latest Insights</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+<!-- Card 1 -->
+<article class="tactile-card bg-surface-container-lowest rounded-xl p-card-padding relative overflow-hidden group cursor-pointer border border-surface-variant/50">
+<div class="absolute top-card-padding left-card-padding w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_balance">account_balance</span>
+</div>
+<div class="h-48 rounded-lg mb-6 mt-16 bg-surface-variant relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A modern, high-key digital workspace focused on financial planning. Soft, light-mode aesthetic with pristine whites, gentle grays, and subtle gold accents. A sleek laptop, a cup of coffee, and cleanly designed printed charts on a pristine white desk. The lighting is airy and serene, projecting professional confidence and order." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCo2r5jTFlNm4rS7iqmV3L00Hq6mOFAcOp8Fwnrhs3WgKADYsjscBc2EaYr6qELa1ZXOCK29CJe8152iqn930BMWqS851Z80nFMTfO0LKE5tFxBq1J4aNDsu6n2udwOjeokQTZRGZNDWKaZFmbWWsex8sTUfdh7TZQdYsa6znLliFDaC3fOCKweedwi8pzbruvmmUwwYZaMRVVzhESeVRTg4ZimcfptManz1RQ01r7klabeHWPZ3sM-')"></div>
+</div>
+<div class="flex items-center gap-2 mb-3">
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Tax Planning</span>
+<span class="text-secondary text-sm">• Oct 12, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 leading-tight group-hover:text-primary transition-colors">Strategic Tax Optimization for FY 24-25</h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-3">A comprehensive guide on leveraging the latest provisions to minimize liabilities while ensuring full compliance for corporate entities.</p>
+</article>
+<!-- Card 2 -->
+<article class="tactile-card bg-surface-container-lowest rounded-xl p-card-padding relative overflow-hidden group cursor-pointer border border-surface-variant/50">
+<div class="absolute top-card-padding left-card-padding w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="receipt_long">receipt_long</span>
+</div>
+<div class="h-48 rounded-lg mb-6 mt-16 bg-surface-variant relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract conceptual image representing GST compliance. Smooth, 3D geometric shapes like folders and documents floating in a clean, off-white space. Subtle isometric depth, soft ambient shadows, and light-refractive glassmorphism elements. The color palette relies on deep blacks, clean whites, and warm gold accents to signify premium financial authority." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEoZx3SMIGsT-QDgixjvH5yMPk25aaVEP9quCyeuc6jHr6HszVSOoVGXWS7mRz1HT_x0P1Jdbczxqn4rZ7H566iw8pKv3CN7Xg4cZirOIg8dMCRJuuoxq6OpFcZTgzRoWrz97U8o8-gexgzFUZ0UxmFd-6olW3skG8ezdpmXd3qS6OPzw0pzXevfj6gshbsVNC5SPK1mwQSxwfvItubttdyMfZY03b_srC2IX-D_IT_eOg-Q1xtNjR')"></div>
+</div>
+<div class="flex items-center gap-2 mb-3">
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">GST Updates</span>
+<span class="text-secondary text-sm">• Sep 28, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 leading-tight group-hover:text-primary transition-colors">Navigating Recent Changes in E-Invoicing</h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-3">Understand the expanded scope of e-invoicing mandates and how your business needs to adapt its internal accounting processes.</p>
+</article>
+<!-- Card 3 -->
+<article class="tactile-card bg-surface-container-lowest rounded-xl p-card-padding relative overflow-hidden group cursor-pointer border border-surface-variant/50">
+<div class="absolute top-card-padding left-card-padding w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="policy">policy</span>
+</div>
+<div class="h-48 rounded-lg mb-6 mt-16 bg-surface-variant relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A macro shot of a sleek, modern fountain pen resting on a heavy-stock, textured white document. Shallow depth of field blurs the background into soft, bright tones. The lighting emphasizes the premium quality of the materials, aligning with a high-end, tactile corporate identity. A subtle hint of gold reflection catches the pen's nib." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASL5G6FHvIyk3uqtAwZV1i9n9GFfQGxkc05oln0C7kvocEn8ig_qUB-FfKU56B9inA8vwmtC_cAvoKz6mKocrCk2Mpue_rgmGUM3cHdn7IyGCePZL0mjLRt9TIVKwq0qaiRcaA-Qhinh847-Ey1aqHNIOXH7jUhnz5nGzsvTIa8rRby9c1zq31yR0VlbM8VdBf3vmoY4I4TMpxCMHtlXAx8RcPFz3lbGWCSktqmNI-wxXLD2FYbQKk')"></div>
+</div>
+<div class="flex items-center gap-2 mb-3">
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Compliance Guides</span>
+<span class="text-secondary text-sm">• Sep 15, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 leading-tight group-hover:text-primary transition-colors">Annual Filing Checklist for Private Limiteds</h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-3">Ensure your statutory filings are accurate and on time with our definitive checklist for the current financial year wrap-up.</p>
+</article>
+</div>
+</section>
+<!-- Resource Downloads -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-gap">
+<div class="bg-on-secondary-fixed rounded-xl p-8 md:p-12 relative overflow-hidden text-surface">
+<!-- Abstract BG element for dark section -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-5">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-white">Resource Library</h2>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim mb-8">Access our repository of commonly used forms, templates, and essential calculators designed to streamline your financial administration.</p>
+<a class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-nav-link text-nav-link hover:bg-primary-fixed transition-colors" href="#">
+                            Browse All Resources
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<a class="glass-panel p-6 rounded-lg flex items-start gap-4 hover:bg-white/10 transition-colors border border-white/10" href="#">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div>
+<h4 class="font-nav-link text-nav-link text-white mb-1">Form 16/16A Utility</h4>
+<p class="text-sm text-secondary-fixed-dim">Latest TDS certificate generator.</p>
+</div>
+</a>
+<a class="glass-panel p-6 rounded-lg flex items-start gap-4 hover:bg-white/10 transition-colors border border-white/10" href="#">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="description">description</span>
+<div>
+<h4 class="font-nav-link text-nav-link text-white mb-1">GST Registration Kit</h4>
+<p class="text-sm text-secondary-fixed-dim">Checklist and application forms.</p>
+</div>
+</a>
+<a class="glass-panel p-6 rounded-lg flex items-start gap-4 hover:bg-white/10 transition-colors border border-white/10" href="#">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="calculate">calculate</span>
+<div>
+<h4 class="font-nav-link text-nav-link text-white mb-1">EMI &amp; Loan Calculator</h4>
+<p class="text-sm text-secondary-fixed-dim">Excel template for complex amortizations.</p>
+</div>
+</a>
+<a class="glass-panel p-6 rounded-lg flex items-start gap-4 hover:bg-white/10 transition-colors border border-white/10" href="#">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="assignment">assignment</span>
+<div>
+<h4 class="font-nav-link text-nav-link text-white mb-1">KYC Declaration</h4>
+<p class="text-sm text-secondary-fixed-dim">Standardized client onboarding forms.</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-secondary dark:bg-on-secondary-fixed text-primary-fixed font-body-md text-body-md border-t-0 shadow-none">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-gutter py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<h3 class="text-headline-md font-headline-md text-on-secondary mb-4">M Sameer &amp; Company</h3>
+<p class="text-secondary-fixed-dim text-sm mt-4">Premium Chartered Accountancy services prioritizing precision, security, and strategic growth.</p>
+</div>
+<div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary mb-4 uppercase tracking-wider">Links</h4>
+<ul class="space-y-3">
+<li><a class="text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Sitemap</a></li>
+<li><a class="text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Privacy Policy</a></li>
+<li><a class="text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary mb-4 uppercase tracking-wider">Business</h4>
+<ul class="space-y-3">
+<li><a class="text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Services</a></li>
+<li><a class="text-primary-fixed font-bold hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Resources</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary mb-4 uppercase tracking-wider">Connect</h4>
+<ul class="space-y-3">
+<li><a class="text-secondary-fixed-dim hover:text-white hover:text-tertiary-fixed transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="px-gutter pb-8 max-w-container-max mx-auto border-t border-white/10 pt-8 text-sm text-secondary-fixed-dim text-center">
+            © 2024 M Sameer &amp; Company. Chartered Accountants. All rights reserved. FRN/MRN Certified.
+        </div>
+</footer>
+<script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.material-symbols-outlined');
+                const title = button.querySelector('h3');
+                
+                const isOpen = content.classList.contains('hidden');
+                
+                // Close all others
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-button h3').forEach(t => t.classList.remove('text-primary'));
+                document.querySelectorAll('.faq-button .material-symbols-outlined').forEach(i => {
+                    i.style.transform = 'rotate(0deg)';
+                });
+
+                if (isOpen) {
+                    content.classList.remove('hidden');
+                    title.classList.add('text-primary');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body></html>

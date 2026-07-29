@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About M Sameer &amp; Company - A Legacy of Financial Integrity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#82f9c2",
+                        "tertiary": "#006c4a",
+                        "surface-container": "#efeeeb",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1a1c1a",
+                        "surface-container-low": "#f4f3f1",
+                        "on-surface-variant": "#4e4634",
+                        "on-primary-fixed-variant": "#584400",
+                        "secondary": "#535f6f",
+                        "primary-fixed-dim": "#f0c12c",
+                        "surface-bright": "#faf9f6",
+                        "on-secondary-fixed-variant": "#3c4857",
+                        "on-primary-fixed": "#241a00",
+                        "outline-variant": "#d1c5ad",
+                        "background": "#faf9f6",
+                        "primary-fixed": "#ffdf90",
+                        "on-secondary-container": "#576474",
+                        "inverse-surface": "#2f312f",
+                        "primary-container": "#f4c430",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e3e2e0",
+                        "tertiary-container": "#68dfab",
+                        "surface-container-high": "#e9e8e5",
+                        "on-tertiary-container": "#006142",
+                        "secondary-fixed": "#d7e3f6",
+                        "outline": "#807661",
+                        "on-secondary-fixed": "#101c2a",
+                        "secondary-container": "#d4e1f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#f0c12c",
+                        "inverse-on-surface": "#f1f1ee",
+                        "secondary-fixed-dim": "#bbc7da",
+                        "on-primary-container": "#695200",
+                        "on-background": "#1a1c1a",
+                        "surface-variant": "#e3e2e0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#002114",
+                        "tertiary-fixed-dim": "#65dca8",
+                        "surface-tint": "#755b00",
+                        "primary": "#755b00",
+                        "on-error": "#ffffff",
+                        "surface": "#faf9f6",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005237"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "section-gap-mobile": "64px",
+                        "container-max": "1280px",
+                        "card-padding": "32px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "nav-link": ["Manrope"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-xl-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "nav-link": ["15px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .blob-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background-color: #faf9f6;
+        }
+        
+        .blob {
+            position: absolute;
+            filter: blur(100px);
+            opacity: 0.15;
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+        
+        .blob-gold {
+            background-color: #f4c430;
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -100px;
+        }
+        
+        .blob-navy {
+            background-color: #101c2a;
+            width: 500px;
+            height: 500px;
+            bottom: -150px;
+            left: -100px;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, 50px) scale(1.1); }
+            100% { transform: translate(40px, -20px) scale(0.9); }
+        }
+
+        .card-3d {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px -10px rgba(16, 28, 42, 0.1), 0 2px 10px -2px rgba(244, 196, 48, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card-3d:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(16, 28, 42, 0.15), 0 4px 15px -4px rgba(244, 196, 48, 0.1);
+        }
+        
+        .chip-3d {
+            background-color: rgba(244, 196, 48, 0.1);
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            box-shadow: inset 1px 1px 2px rgba(255,255,255,0.8), 2px 2px 5px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col relative">
+<div class="blob-bg">
+<div class="blob blob-gold"></div>
+<div class="blob blob-navy"></div>
+</div>
+<!-- TopNavBar -->
+<nav class="bg-white/60 dark:bg-inverse-surface/60 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="M Sameer &amp; Company Logo" class="h-10 w-10 object-contain rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP03Aly2p7D4cP8lIvOz5Lu0nzmOIgxUGJ5_5yWuWb0NwkRlLif4ZAmlosLfTHVUY-VvQqHZkNiDY3asa4WoaMIjAeJ2iq6TIZFt4iX22Y_6EjQtJmZOwzpkhLLDBcmYMckg9_j6EtHIG_Ml_vGi2CvSHpsiOQzhaWq9plenroHftkVM1DCyQMBaw8e5nW-39AadEeJrP3wfF3jkYp7jIy909DGhy9tds7Vu8GIVaqjGkA-kCfNpLh"/>
+<span class="text-headline-md font-headline-md text-secondary dark:text-secondary-fixed">M Sameer &amp; Company</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300 font-nav-link text-nav-link" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-nav-link text-nav-link scale-95 transition-transform" href="#">About</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300 font-nav-link text-nav-link" href="#">Services</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300 font-nav-link text-nav-link" href="#">Online Tools</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300 font-nav-link text-nav-link" href="#">Who We Help</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300 font-nav-link text-nav-link" href="#">Resources</a>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button class="bg-transparent border-2 border-on-secondary-fixed text-on-secondary-fixed font-nav-link text-nav-link py-2 px-6 rounded-full hover:bg-surface-container-high transition-colors">WhatsApp</button>
+<button class="bg-gradient-to-r from-primary-container to-primary-fixed-dim text-on-primary-container font-nav-link text-nav-link py-2 px-6 rounded-full hover:shadow-[inset_0_0_10px_rgba(255,255,255,0.5)] transition-all shadow-md">Book a Consultation</button>
+</div>
+<button class="md:hidden text-secondary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-section-gap px-gutter max-w-container-max mx-auto w-full relative z-10">
+<!-- Hero Section -->
+<section class="text-center mb-section-gap">
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-secondary-fixed mb-stack-md">A Legacy of Financial Integrity.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">Delivering precision, strategic insight, and unwavering trust for decades. We are not just accountants; we are the architects of your financial stability.</p>
+</section>
+<!-- Profile Section (Bento Layout) -->
+<section class="mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 card-3d p-card-padding flex flex-col items-center justify-center text-center">
+<div class="w-48 h-48 rounded-full border-4 border-primary-container p-2 mb-stack-lg relative">
+<img class="w-full h-full object-cover rounded-full" data-alt="A professional studio portrait of a senior Chartered Accountant, Indian male, wearing a crisp navy blue suit and a subtle gold tie. He exudes confidence, experience, and approachability. The background is a soft, modern corporate office setting with warm, high-key lighting that emphasizes a trustworthy and premium financial services aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYunmcPKPSRzzBDn27vJ46VfAUdUCOtkCRqX-2eRohf6uDFCT_QQ1M5b6R7DvcdMhtEkqNDTD6ud9YhVito-SkjQxStSPt_SgN-WHySDWHB4jzbgHjmFpiKbq6p-p6ihHJfW6Zdazfmdf11cOUpQZ84D18cmkhm-uiw8e1UK6Hj5aZPMDkhc3xHRw-tpvvwhYwuJoMwvFKPYpJ3V7FgmjKcVkuigJR89zBp5CG3u-FnooL2UWpHyZG"/>
+<div class="absolute -bottom-4 right-4 bg-surface rounded-full p-2 shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill">verified</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-secondary-fixed mb-2">CA Sameer Ilahi</h2>
+<p class="font-label-caps text-label-caps text-secondary mb-stack-md tracking-wider">Founder &amp; Principal Partner</p>
+<div class="flex gap-4 mt-auto">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-primary-container/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-primary-container/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">call</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col gap-gutter">
+<div class="card-3d p-card-padding h-full">
+<div class="flex items-center gap-3 mb-stack-md">
+<div class="chip-3d">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Professional Bio</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">With over two decades of distinguished experience in statutory audit, direct taxation, and corporate advisory, CA Sameer Ilahi has established a reputation for uncompromising excellence. His visionary leadership has transformed M Sameer &amp; Company into a trusted advisor for diverse industry leaders.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">He actively participates in the Institute of Chartered Accountants of India (ICAI) forums and frequently mentors emerging financial professionals, ensuring the legacy of meticulous financial stewardship continues.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter h-full">
+<div class="card-3d p-card-padding flex flex-col justify-center items-center text-center">
+<span class="font-headline-lg text-headline-lg text-primary-container mb-2">20+</span>
+<span class="font-label-caps text-label-caps text-secondary">Years Experience</span>
+</div>
+<div class="card-3d p-card-padding flex flex-col justify-center items-center text-center">
+<span class="font-headline-lg text-headline-lg text-primary-container mb-2">500+</span>
+<span class="font-label-caps text-label-caps text-secondary">Clients Served</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Practice Overview -->
+<section class="mb-section-gap grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-secondary-fixed mb-stack-md">Rooted in Muzaffarnagar, Respected Nationally.</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-stack-lg">M Sameer &amp; Company was founded with a singular vision: to provide world-class financial and regulatory guidance tailored to the nuanced needs of local and national enterprises. We combine deep-rooted local understanding with global standards of compliance and strategic foresight.</p>
+<!-- Credentials Card -->
+<div class="card-3d p-6 border-l-4 border-tertiary inline-block mt-4">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">verified_user</span>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant">Official Credentials</h4>
+</div>
+<div class="grid grid-cols-2 gap-8 mt-4">
+<div>
+<span class="block font-body-md text-secondary text-sm">Firm Registration Number (FRN)</span>
+<span class="block font-headline-md text-lg text-on-secondary-fixed">012345C</span>
+</div>
+<div>
+<span class="block font-body-md text-secondary text-sm">Membership Number (MRN)</span>
+<span class="block font-headline-md text-lg text-on-secondary-fixed">543210</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-96 rounded-xl overflow-hidden shadow-lg relative">
+<img class="w-full h-full object-cover" data-alt="A visually striking, modern architectural photograph of a premium corporate office building interior in India, representing a high-end Chartered Accountancy firm in Muzaffarnagar. The scene features polished marble floors, sleek glass partitions, and warm, inviting lighting. Subtle elements of traditional Indian design are seamlessly integrated into the contemporary glassmorphism aesthetic, conveying a sense of established local roots and modern professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Vj7PtXEZ1dNKlDNZQlLMBJ2jsKC9O8SOBolFXDhhTmFSet6Cy_dqZBKnH1AlQstw6jMCMgLV982PpXzzW_QugXJhBXoINQ8PmOzoJqpYIrk1zzHlTEXraEqvztSJjgR3A8FuVPVWnduHvj66BHjy66K9mw3hM68bUIKBBouYiA_geTlPgUtxYcub1APfVO_vIM9PuYfzIZ5Ud9Zi_J2lN3nttrd9BIHUQP78xCIoVEw5dd6s8XQE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed/50 to-transparent"></div>
+</div>
+</section>
+<!-- Why Choose Us Grid -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-secondary-fixed text-center mb-16">The Pillars of Our Practice</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="card-3d p-card-padding">
+<div class="chip-3d mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">handshake</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface mb-2">Unwavering Trust</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Confidentiality and ethical integrity are the cornerstones of every client relationship we build.</p>
+</div>
+<div class="card-3d p-card-padding">
+<div class="chip-3d mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">my_location</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface mb-2">Calculated Precision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Meticulous attention to detail in every audit, filing, and advisory consultation we undertake.</p>
+</div>
+<div class="card-3d p-card-padding">
+<div class="chip-3d mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">public</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface mb-2">Global Standards</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Adherence to the latest international accounting principles and robust compliance frameworks.</p>
+</div>
+<div class="card-3d p-card-padding">
+<div class="chip-3d mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">location_city</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface mb-2">Local Expertise</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep operational knowledge of regional economic nuances and specific state tax regulations.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary dark:bg-on-secondary-fixed w-full mt-auto relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-gutter py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<span class="text-headline-md font-headline-md text-on-secondary mb-4 block">M Sameer &amp; Company</span>
+<p class="font-body-md text-body-md text-primary-fixed mb-4">Chartered Accountants providing strategic financial foresight and rigorous compliance services.</p>
+<p class="font-label-caps text-label-caps text-on-secondary opacity-70">© 2024 M Sameer &amp; Company. Chartered Accountants. All rights reserved. FRN/MRN Certified.</p>
+</div>
+<div class="md:col-start-3">
+<h4 class="font-label-caps text-label-caps text-on-secondary mb-4 tracking-widest opacity-50">NAVIGATION</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Sitemap</a></li>
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary mb-4 tracking-widest opacity-50">CONNECT</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Services</a></li>
+<li><a class="font-body-md text-body-md text-secondary-fixed-dim hover:text-white transition-colors focus:ring-2 focus:ring-primary-fixed rounded" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

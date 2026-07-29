@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1",
+    "title": "Statutory Audit",
+    "icon": "fact_check",
+    "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80",
+    "points": [
+      "Full financial statement review & certification",
+      "ICAI compliance & reporting standards",
+      "Fraud detection & risk assessment",
+      "Stakeholder & investor confidence reports"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Internal Audit",
+    "icon": "plagiarism",
+    "image": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=600&q=80",
+    "points": [
+      "Internal controls evaluation & gaps report",
+      "Business process optimization",
+      "Regulatory & governance compliance",
+      "Risk management & action plans"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Direct Tax",
+    "icon": "account_balance",
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
+    "points": [
+      "ITR filing — Individual, HUF, Firm & Company",
+      "Tax planning & liability minimization",
+      "Income Tax notice handling & replies",
+      "TDS returns & advance tax computation"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "GST Compliance",
+    "icon": "receipt_long",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
+    "points": [
+      "GST registration & cancellation",
+      "Monthly/quarterly GSTR return filing",
+      "GST refund processing & follow-up",
+      "GST audit & notice responses"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "International Taxation",
+    "icon": "public",
+    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&q=80",
+    "points": [
+      "DTAA (Double Tax Avoidance) advisory",
+      "Transfer pricing documentation",
+      "NRI taxation & FEMA compliance",
+      "Cross-border transactions structuring"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Corporate Law",
+    "icon": "gavel",
+    "image": "https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=600&q=80",
+    "points": [
+      "Company incorporation & closure",
+      "M&A due diligence & structuring",
+      "Board compliance & secretarial services",
+      "MCA filings & annual returns"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Project Financing",
+    "icon": "monetization_on",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80",
+    "points": [
+      "Bank loan & CC limit documentation",
+      "CMA data & project report preparation",
+      "Viability & feasibility reports",
+      "Working capital & term loan advisory"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Business Advisory",
+    "icon": "lightbulb",
+    "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+    "points": [
+      "Business setup — Pvt Ltd, LLP, Partnership",
+      "Strategic growth & market entry plans",
+      "Financial forecasting & budgeting",
+      "Startup advisory & investor readiness"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "ROC Filings",
+    "icon": "folder_special",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80",
+    "points": [
+      "Annual return & financial statements filing",
+      "Director KYC & DIN compliance",
+      "Change in directors / share capital updates",
+      "Penalty avoidance & late filing assistance"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Accounting Outsourcing",
+    "icon": "manage_accounts",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80",
+    "points": [
+      "Day-to-day bookkeeping & ledger management",
+      "Payroll processing & salary slips",
+      "Monthly P&L & Balance Sheet reports",
+      "Tally / Zoho Books / Busy accounting support"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Wealth Management",
+    "icon": "trending_up",
+    "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+    "points": [
+      "Comprehensive asset protection strategies",
+      "Mutual funds & investment advisory",
+      "Portfolio diversification planning",
+      "Retirement & succession planning"
+    ]
+  }
+]
