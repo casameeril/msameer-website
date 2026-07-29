@@ -36,8 +36,8 @@
     <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
       <img alt="M Sameer Logo" class="nav-logo-img" src="${LOGO_SRC}"/>
       <div class="leading-tight">
-        <span class="nav-brand-text block text-[0.95rem] sm:text-[1.1rem]">M Sameer &amp; Company</span>
-        <span class="nav-brand-sub text-[0.55rem] sm:text-[0.65rem]">Chartered Accountants</span>
+        <span class="nav-brand-text block text-[1.1rem] sm:text-[1.2rem]">M Sameer &amp; Company</span>
+        <span class="nav-brand-sub text-[0.65rem] sm:text-[0.7rem]">Chartered Accountants</span>
       </div>
     </a>
 
@@ -59,12 +59,12 @@
     </div>
 
     <!-- Mobile: Call icon + hamburger -->
-    <div class="flex md:hidden items-center gap-2 pr-1">
-      <a href="tel:${PHONE_NUMBER}" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#0A1931] text-white flex-shrink-0">
-        <span class="material-symbols-outlined text-[18px] filled">call</span>
+    <div class="flex md:hidden items-center gap-3 pr-1">
+      <a href="tel:${PHONE_NUMBER}" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#0A1931] text-white flex-shrink-0">
+        <span class="material-symbols-outlined text-[20px] filled">call</span>
       </a>
-      <button id="menu-toggle" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#F6C90E] flex-shrink-0" aria-label="Open menu">
-        <span class="material-symbols-outlined text-[22px] text-[#0A1931]">menu</span>
+      <button id="menu-toggle" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#F6C90E] flex-shrink-0" aria-label="Open menu">
+        <span class="material-symbols-outlined text-[26px] text-[#0A1931]">menu</span>
       </button>
     </div>
   </div>
