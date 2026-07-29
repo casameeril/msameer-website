@@ -30,7 +30,7 @@
 
     placeholder.outerHTML = `
 <nav class="fixed top-0 w-full z-50 glass-nav" id="main-nav">
-  <div class="flex items-center justify-between px-4 py-3 max-w-[1280px] mx-auto">
+  <div class="flex items-center justify-between px-3 sm:px-4 py-2.5 max-w-[1280px] mx-auto">
 
     <!-- Brand (always visible) -->
     <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
@@ -59,11 +59,11 @@
     </div>
 
     <!-- Mobile: Call icon + hamburger -->
-    <div class="flex md:hidden items-center gap-2">
-      <a href="tel:${PHONE_NUMBER}" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#0A1931] text-white">
+    <div class="flex md:hidden items-center gap-2 pr-1">
+      <a href="tel:${PHONE_NUMBER}" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#0A1931] text-white flex-shrink-0">
         <span class="material-symbols-outlined text-[18px] filled">call</span>
       </a>
-      <button id="menu-toggle" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#F6C90E]" aria-label="Open menu">
+      <button id="menu-toggle" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#F6C90E] flex-shrink-0" aria-label="Open menu">
         <span class="material-symbols-outlined text-[22px] text-[#0A1931]">menu</span>
       </button>
     </div>
