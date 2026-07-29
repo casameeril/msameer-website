@@ -74,6 +74,11 @@ const authMiddleware = (req, res, next) => {
   }
 };
 
+// ─── PING (For cron-job keep-alive) ─────────────────────────────────
+app.get('/ping', (req, res) => {
+  res.json({ status: 'ok', time: new Date().toISOString() });
+});
+
 // ─── AUTH ───────────────────────────────────────────────────────────
 app.post('/api/admin/login', async (req, res) => {
   const { username, password } = req.body;
@@ -84,13 +89,25 @@ app.post('/api/admin/login', async (req, res) => {
   res.json({ token, username });
 });
 
+// ─── SERVICES CACHE ─────────────────────────────────────────────────
+let servicesCache = null;
+let servicesCacheTime = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes cache
+
 // ─── SERVICES API (Public) ───────────────────────────────────────────
 app.get('/api/services', async (req, res) => {
   try {
+    // Return from cache if fresh
+    if (servicesCache && (Date.now() - servicesCacheTime < CACHE_TTL)) {
+      return res.json(servicesCache);
+    }
     const snapshot = await db.collection('services').get();
     const services = snapshot.docs.map(doc => doc.data());
     // Sort by id mathematically
     services.sort((a, b) => Number(a.id) - Number(b.id));
+    // Save to cache
+    servicesCache = services;
+    servicesCacheTime = Date.now();
     res.json(services);
   } catch (error) {
     console.error(error);
