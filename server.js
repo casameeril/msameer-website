@@ -28,8 +28,8 @@ const db = getFirestore();
 const mailTransporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.GMAIL_USER || 'Casameerilahi@gmail.com',
-    pass: process.env.GMAIL_APP_PASSWORD
+    user: (process.env.GMAIL_USER || 'Casameerilahi@gmail.com').trim(),
+    pass: process.env.GMAIL_APP_PASSWORD ? process.env.GMAIL_APP_PASSWORD.trim() : undefined
   }
 });
 
@@ -190,8 +190,10 @@ app.post('/api/consultations', async (req, res) => {
   
   await db.collection('consultations').doc(entry.id).set(entry);
 
+  const appPassword = process.env.GMAIL_APP_PASSWORD ? process.env.GMAIL_APP_PASSWORD.trim() : null;
+
   // Send Email Notification to Admin (Run in background, don't await)
-  if (process.env.GMAIL_APP_PASSWORD) {
+  if (appPassword) {
     mailTransporter.sendMail({
       from: '"M Sameer & Co. Website" <Casameerilahi@gmail.com>',
       to: 'Casameerilahi@gmail.com',
@@ -212,7 +214,7 @@ app.post('/api/consultations', async (req, res) => {
   }
 
   // Send Auto-Reply to User (Run in background, don't await)
-  if (email && process.env.GMAIL_APP_PASSWORD) {
+  if (email && appPassword) {
     mailTransporter.sendMail({
       from: '"M Sameer & Company" <Casameerilahi@gmail.com>',
       to: email,
