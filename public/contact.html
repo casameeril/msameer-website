@@ -69,6 +69,14 @@ Schedule Consultation <span class="material-symbols-outlined text-sm">arrow_forw
 <div id="form-msg" class="hidden text-center text-sm font-semibold mt-4"></div>
 </form>
 
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init({ publicKey: "zxxD7L_JI9PDuIr6r" });
+  })();
+</script>
+
 <script>
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -86,27 +94,30 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
   };
 
   try {
-    const res = await fetch('https://msameer-backend.onrender.com/api/consultations', {
+    // 1. Send Email via EmailJS (Directly from browser, bypasses Render SMTP block)
+    await emailjs.send('service_deqd3mr', 'template_vs3ps3f', payload);
+
+    // 2. Save to Database via Render Backend (So it shows in Admin Panel)
+    fetch('https://msameer-backend.onrender.com/api/consultations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    });
-    if (res.ok) {
-      msgEl.innerHTML = `
-        <div class="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/20 rounded-xl mt-4">
-          <span class="material-symbols-outlined text-green-500 filled text-2xl">check_circle</span>
-          <div class="text-left">
-            <p class="text-green-500 font-semibold text-sm">Message Sent Successfully</p>
-            <p class="text-slate-400 text-xs mt-1">Thank you for reaching out. Our team will contact you within 24 hours.</p>
-          </div>
+    }).catch(err => console.error("Database save error:", err)); // Don't await, let it run in background
+
+    // Success UI
+    msgEl.innerHTML = `
+      <div class="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/20 rounded-xl mt-4">
+        <span class="material-symbols-outlined text-green-500 filled text-2xl">check_circle</span>
+        <div class="text-left">
+          <p class="text-green-500 font-semibold text-sm">Message Sent Successfully</p>
+          <p class="text-slate-400 text-xs mt-1">Thank you for reaching out. Our team will contact you within 24 hours.</p>
         </div>
-      `;
-      msgEl.className = 'block';
-      e.target.reset();
-    } else {
-      throw new Error('Failed');
-    }
+      </div>
+    `;
+    msgEl.className = 'block';
+    e.target.reset();
   } catch (err) {
+    console.error("EmailJS Error:", err);
     msgEl.innerHTML = `
       <div class="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-xl mt-4">
         <span class="material-symbols-outlined text-red-500 filled text-2xl">error</span>
