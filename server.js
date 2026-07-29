@@ -191,51 +191,35 @@ app.post('/api/consultations', async (req, res) => {
   await db.collection('consultations').doc(entry.id).set(entry);
 
   const appPassword = process.env.GMAIL_APP_PASSWORD ? process.env.GMAIL_APP_PASSWORD.trim() : null;
+  let emailDebug = { admin: "skipped", user: "skipped", error: null };
 
-  // Send Email Notification to Admin (Run in background, don't await)
   if (appPassword) {
-    mailTransporter.sendMail({
-      from: '"M Sameer & Co. Website" <Casameerilahi@gmail.com>',
-      to: 'Casameerilahi@gmail.com',
-      subject: `New Consultation Request from ${name}`,
-      html: `
-        <h2>New Consultation Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Email:</strong> ${email || 'N/A'}</p>
-        <p><strong>Service Needed:</strong> ${service || 'N/A'}</p>
-        <p><strong>Message:</strong><br/>${message || 'N/A'}</p>
-        <hr/>
-        <p><a href="https://www.casameerilahi.com/admin">Click here to view in Admin Panel</a></p>
-      `
-    }).catch(err => console.error("Admin Email Error:", err));
+    try {
+      await mailTransporter.sendMail({
+        from: '"M Sameer & Co. Website" <Casameerilahi@gmail.com>',
+        to: 'Casameerilahi@gmail.com',
+        subject: `New Consultation Request from ${name}`,
+        html: `
+          <h2>New Consultation Request</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Email:</strong> ${email || 'N/A'}</p>
+          <p><strong>Service Needed:</strong> ${service || 'N/A'}</p>
+          <p><strong>Message:</strong><br/>${message || 'N/A'}</p>
+          <hr/>
+          <p><a href="https://www.casameerilahi.com/admin">Click here to view in Admin Panel</a></p>
+        `
+      });
+      emailDebug.admin = "sent";
+    } catch (err) {
+      emailDebug.admin = "failed";
+      emailDebug.error = err.message;
+    }
   } else {
-    console.error("GMAIL_APP_PASSWORD not set, skipping admin email");
+    emailDebug.error = "GMAIL_APP_PASSWORD is not set on Render";
   }
 
-  // Send Auto-Reply to User (Run in background, don't await)
-  if (email && appPassword) {
-    mailTransporter.sendMail({
-      from: '"M Sameer & Company" <Casameerilahi@gmail.com>',
-      to: email,
-      subject: 'Thank you for contacting M Sameer & Company',
-      html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <h2>Thank You for Connecting with Us</h2>
-          <p>Dear ${name},</p>
-          <p>We have successfully received your consultation request regarding <strong>${service || 'our services'}</strong>.</p>
-          <p>Our team of financial experts is reviewing your query and will reach out to you within the next <strong>24 hours</strong> on your provided mobile number (${phone}).</p>
-          <br>
-          <p>Best Regards,</p>
-          <p><strong>M Sameer & Company</strong><br>
-          Chartered Accountants<br>
-          <a href="https://www.casameerilahi.com">www.casameerilahi.com</a></p>
-        </div>
-      `
-    }).catch(err => console.error("User Email Error:", err));
-  }
-
-  res.json({ success: true, id: entry.id });
+  res.json({ success: true, id: entry.id, debug: emailDebug });
 });
 
 // Admin: View all consultations
