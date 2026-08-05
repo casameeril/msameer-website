@@ -36,8 +36,8 @@
     <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
       <img alt="M Sameer Logo" class="nav-logo-img" src="${LOGO_SRC}"/>
       <div class="leading-tight">
-        <span class="nav-brand-text block text-[1.25rem] sm:text-[1.35rem]">M Sameer &amp; Company</span>
-        <span class="nav-brand-sub text-[0.75rem] sm:text-[0.8rem]">Chartered Accountants</span>
+        <span class="nav-brand-text block text-[1.25rem] sm:text-[1.35rem] uppercase">M Sameer &amp; Company</span>
+        <span class="nav-brand-sub text-[0.55rem] sm:text-[0.6rem]">Chartered Accountants</span>
       </div>
     </a>
 
@@ -225,15 +225,7 @@
       "ICAI Certified CA",
       "FRN: 036430C",
       "MRN: 476339",
-      "Freshly Qualified 2024",
-      "100% Dedicated Service",
-      "Muzaffarnagar · U.P.",
-      "Transparent Pricing",
-    ]);
-
-    renderMarquee("marquee-services", [
       "RVSF Licensing",
-      "Vehicle Scrapping Setup",
       "Income Tax Returns",
       "GST Registration & Filing",
       "Company Registration",
