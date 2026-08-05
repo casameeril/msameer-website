@@ -113,7 +113,7 @@
     <div class="md:col-span-1">
       <div class="flex items-center gap-3 mb-4">
         <img src="${LOGO_SRC}" alt="Logo" class="h-10 w-10 object-contain logo-glow"/>
-        <span class="font-display text-xl font-semibold text-white">M Sameer &amp; Company</span>
+        <span class="font-display text-xl font-semibold text-white uppercase">M Sameer &amp; Company</span>
       </div>
       <p class="text-slate-300 text-sm leading-relaxed max-w-xs">Premium Chartered Accountancy — precision, integrity, and sustainable financial growth for modern enterprises.</p>
       <div class="flex items-center gap-2 mt-5">
