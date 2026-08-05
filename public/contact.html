@@ -85,24 +85,42 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
   btn.innerHTML = 'Submitting...';
   btn.disabled = true;
   
+  const nameVal = document.getElementById('name').value;
+  const emailVal = document.getElementById('email').value;
+  const phoneVal = document.getElementById('phone').value;
+  const serviceVal = document.getElementById('service').value;
+  const msgVal = document.getElementById('message').value;
+
   const payload = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    service: document.getElementById('service').value,
-    message: document.getElementById('message').value,
+    name: nameVal,
+    from_name: nameVal, // Common EmailJS variable
+    email: emailVal,
+    reply_to: emailVal, // Common EmailJS variable
+    phone: phoneVal,
+    service: serviceVal,
+    message: msgVal,
   };
 
   try {
-    // 1. Send Email via EmailJS (Directly from browser, bypasses Render SMTP block)
+    // 1. Send Main Email to Admin
     await emailjs.send('service_deqd3mr', 'template_vs3ps3f', payload);
 
-    // 2. Save to Database via Render Backend (So it shows in Admin Panel)
+    // 2. Trigger Auto-Reply to User (using their other template)
+    if (emailVal) {
+      emailjs.send('service_deqd3mr', 'template_24ya5dv', {
+        to_email: emailVal,
+        to_name: nameVal,
+        name: nameVal,
+        service: serviceVal
+      }).catch(err => console.error("Auto-reply error:", err));
+    }
+
+    // 3. Save to Database via Render Backend
     fetch('https://msameer-backend.onrender.com/api/consultations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    }).catch(err => console.error("Database save error:", err)); // Don't await, let it run in background
+    }).catch(err => console.error("Database save error:", err));
 
     // Success UI
     msgEl.innerHTML = `
@@ -123,7 +141,7 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
         <span class="material-symbols-outlined text-red-500 filled text-2xl">error</span>
         <div class="text-left">
           <p class="text-red-500 font-semibold text-sm">Failed to send message</p>
-          <p class="text-slate-400 text-xs mt-1">Please try again or contact us directly via phone.</p>
+          <p class="text-slate-400 text-xs mt-1">Error: ${err.text || err.message || JSON.stringify(err)}</p>
         </div>
       </div>
     `;
