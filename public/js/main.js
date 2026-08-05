@@ -223,8 +223,6 @@
 
     renderMarquee("marquee-trust", [
       "ICAI Certified CA",
-      "FRN: 036430C",
-      "MRN: 476339",
       "RVSF Licensing",
       "Income Tax Returns",
       "GST Registration & Filing",
