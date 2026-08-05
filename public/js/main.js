@@ -150,11 +150,11 @@
       <address class="not-italic space-y-3 text-sm text-slate-300">
         <p class="flex items-start gap-2">
           <span class="material-symbols-outlined text-[#F6C90E] text-[18px] mt-0.5 filled">location_on</span>
-          Civil Lines, Muzaffarnagar, UP 251001
+          Office 3, 1st Floor, Opp. Islamia Inter College, Arya Samaj Road, Muzaffarnagar 251001
         </p>
         <p class="flex items-center gap-2">
           <span class="material-symbols-outlined text-[#F6C90E] text-[18px] filled">mail</span>
-          contact@msameerco.com
+          Casameerilahi@gmail.com
         </p>
         <p class="flex items-center gap-2">
           <span class="material-symbols-outlined text-[#F6C90E] text-[18px] filled">call</span>
@@ -236,16 +236,7 @@
       "Business Advisory",
     ]);
 
-    renderMarquee("marquee-industries", [
-      "Small Businesses",
-      "Startups & MSMEs",
-      "Freelancers",
-      "Traders",
-      "Real Estate",
-      "E-Commerce Sellers",
-      "Salaried Individuals",
-      "Partnership Firms",
-    ]);
+
 
     // Typewriter effect - works on both mobile and desktop
     const twEls = [
