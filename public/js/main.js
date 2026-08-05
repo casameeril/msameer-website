@@ -164,7 +164,7 @@
     </div>
   </div>
   <div class="border-t border-[rgba(255,255,255,0.1)] px-6 py-6 text-center flex flex-col items-center justify-center gap-1">
-    <p class="text-slate-400 text-xs">© 2025 M Sameer &amp; Company. Chartered Accountants. FRN: 036430C · MRN: 476339</p>
+    <p class="text-slate-400 text-xs">© 2025 M SAMEER &amp; COMPANY. Chartered Accountants.</p>
     <p class="text-slate-500 text-[11px] mt-1">Copyright by <a href="https://tech-up-club.vercel.app/index.html" target="_blank" class="text-[#F6C90E] hover:text-white transition-colors underline decoration-[#F6C90E]/30 underline-offset-2">TechUp</a></p>
   </div>
 </footer>
