@@ -14,7 +14,7 @@ body { overflow-x: hidden; max-width: 100%; }
   --luxury-gold: #F6C90E;    /* Vibrant yellow/gold */
   --crimson-red: #A31D3F;    /* Rich expensive red */
   
-  --bg-pearl: #FDF8FA;       /* Very soft, premium rosy-pearl */
+  --bg-pearl: #FCFBF8;       /* Very soft, premium ivory/white */
   --bg-card: #FFFFFF;        /* Pure white for contrast */
   
   --text-main: #121826;      /* Near black for readability */
@@ -41,7 +41,7 @@ body {
   content: '';
   position: absolute; top: -10%; left: -10%;
   width: 50vw; height: 50vw;
-  background: radial-gradient(circle, rgba(21, 94, 149, 0.08) 0%, transparent 70%); /* Blue glow */
+  background: radial-gradient(circle, rgba(246, 201, 14, 0.1) 0%, transparent 70%); /* Gold glow */
   filter: blur(80px);
   animation: ambientPulse 8s ease-in-out infinite alternate;
 }
@@ -49,14 +49,14 @@ body {
   content: '';
   position: absolute; bottom: -10%; right: -15%;
   width: 60vw; height: 60vw;
-  background: radial-gradient(circle, rgba(246, 201, 14, 0.08) 0%, transparent 70%); /* Yellow glow */
+  background: radial-gradient(circle, rgba(246, 201, 14, 0.1) 0%, transparent 70%); /* Yellow glow */
   filter: blur(90px);
   animation: ambientPulse 10s ease-in-out infinite alternate-reverse;
 }
 .ambient-glow .glow-red {
   position: absolute; top: 40%; left: 30%;
   width: 40vw; height: 40vw;
-  background: radial-gradient(circle, rgba(163, 29, 63, 0.04) 0%, transparent 70%); /* Soft red glow */
+  background: radial-gradient(circle, rgba(10, 25, 49, 0.05) 0%, transparent 70%); /* Soft navy glow instead of red */
   filter: blur(100px);
 }
 @keyframes ambientPulse {
@@ -65,10 +65,10 @@ body {
 }
 
 /* ══════════════════════════════════
-   PREMIUM NAVIGATION BAR (Light Pink)
+   PREMIUM NAVIGATION BAR (White/Gold Glass)
    ══════════════════════════════════ */
 .glass-nav {
-  background: rgba(253, 242, 248, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 2px solid var(--luxury-gold);
@@ -79,8 +79,8 @@ body {
   overflow: hidden;
 }
 .glass-nav.scrolled {
-  background: rgba(253, 242, 248, 0.98);
-  box-shadow: 0 10px 40px rgba(163, 29, 63, 0.08); /* Soft crimson shadow */
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 40px rgba(246, 201, 14, 0.15); /* Soft gold shadow */
 }
 
 .nav-brand-text {
@@ -349,7 +349,7 @@ body {
 
 /* Animated Hero Frame Background */
 .animated-bg-frame {
-  background: linear-gradient(120deg, #FCE7F3, #FEF9C3, #FDF2F8, #FEF08A);
+  background: linear-gradient(120deg, #FEF3C7, #FDE68A, #FEF3C7, #FCD34D); /* Pure gold/amber gradient */
   background-size: 300% 300%;
   animation: gradientShift 6s ease infinite;
 }
