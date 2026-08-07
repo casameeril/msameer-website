@@ -18,9 +18,9 @@
 
 <main class="relative z-10 flex-grow pb-24">
 <section class="page-hero pt-32 pb-16 px-6 text-center max-w-[1280px] mx-auto">
-  <p class="text-blue-300 uppercase tracking-[0.2em] text-xs font-semibold mb-4">Our Services</p>
-  <h1 class="font-display text-4xl md:text-6xl font-bold text-white mb-6">Comprehensive Financial Solutions</h1>
-  <p class="text-slate-300 text-lg max-w-2xl mx-auto">High-end precision and strategic foresight across audit, tax, and corporate advisory.</p>
+  <p class="text-blue-700 uppercase tracking-[0.2em] text-xs font-semibold mb-4">Our Services</p>
+  <h1 class="font-display text-4xl md:text-6xl font-bold text-slate-900 mb-6">Comprehensive Financial Solutions</h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">High-end precision and strategic foresight across audit, tax, and corporate advisory.</p>
 </section>
 
 <div id="marquee-services"></div>
@@ -28,8 +28,8 @@
 <section class="px-6 max-w-[1280px] mx-auto py-16">
 <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
   <div class="col-span-full text-center py-12">
-    <div class="w-8 h-8 border-2 border-[#0B0F19]/10 border-t-blue-700 rounded-full animate-spin mx-auto mb-4"></div>
-    <p class="text-slate-300">Loading services...</p>
+    <div class="w-8 h-8 border-2 border-slate-200 border-t-blue-700 rounded-full animate-spin mx-auto mb-4"></div>
+    <p class="text-slate-600">Loading services...</p>
   </div>
 </div>
 </section>
@@ -40,30 +40,30 @@ const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
 
 function renderServices(services, container) {
   if (!services || services.length === 0) {
-    container.innerHTML = '<div class="col-span-full text-center py-12 text-slate-300">No services found.</div>';
+    container.innerHTML = '<div class="col-span-full text-center py-12 text-slate-600">No services found.</div>';
     return;
   }
   container.innerHTML = services.map((s, idx) => {
     const isWide = s.title === 'Wealth Management' || (services.length % 2 !== 0 && idx === services.length - 1 && services.length > 3);
     const articleClass = isWide
-      ? "tactile-card group overflow-hidden rounded-2xl border border-white/10 shadow-md hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-3"
-      : "tactile-card group flex flex-col overflow-hidden rounded-2xl border border-white/10 shadow-md hover:shadow-xl transition-shadow duration-300";
+      ? "tactile-card group overflow-hidden rounded-2xl border border-slate-100 shadow-md hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-3"
+      : "tactile-card group flex flex-col overflow-hidden rounded-2xl border border-slate-100 shadow-md hover:shadow-xl transition-shadow duration-300";
     const imgHtml = s.image
       ? `<img src="${s.image}" alt="${s.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>`
       : `<div class="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400"><span class="material-symbols-outlined text-4xl">${s.icon||'star'}</span></div>`;
     const msg = encodeURIComponent(`Hello, I need ${s.title} consultation`);
-    const pointsHtml = (s.points || []).map(p => `<li class="flex items-start gap-2 text-slate-300 text-sm"><span class="material-symbols-outlined text-green-500 text-base mt-0.5 filled">check_circle</span>${p}</li>`).join('');
+    const pointsHtml = (s.points || []).map(p => `<li class="flex items-start gap-2 text-slate-600 text-sm"><span class="material-symbols-outlined text-green-500 text-base mt-0.5 filled">check_circle</span>${p}</li>`).join('');
     if (isWide) {
-      return `<article class="${articleClass}"><div class="flex flex-col md:flex-row h-full"><div class="md:w-1/3 h-[220px] md:h-auto overflow-hidden">${imgHtml}</div><div class="p-8 flex flex-col flex-grow md:w-2/3"><div class="chip-3d mb-4 w-11 h-11"><span class="material-symbols-outlined text-blue-300 filled">${s.icon||'star'}</span></div><h3 class="font-display text-2xl text-white mb-3 font-bold">${s.title}</h3><ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 flex-grow">${(s.points || []).map(p => `<li class="flex items-start gap-2 text-slate-300 text-sm"><span class="material-symbols-outlined text-green-500 text-base mt-0.5 filled">check_circle</span>${p}</li>`).join('')}</ul><div class="flex gap-3 mt-auto"><a href="https://wa.me/917500208500?text=${msg}" target="_blank" class="flex items-center justify-center gap-2 px-6 rounded-full py-2.5 text-sm font-semibold text-white" style="background:#25D366"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4"/> WhatsApp</a><a href="tel:+917500208500" class="flex items-center justify-center gap-2 px-6 rounded-full py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 transition-all"><span class="material-symbols-outlined text-base filled">call</span> Call Now</a></div></div></div></article>`;
+      return `<article class="${articleClass}"><div class="flex flex-col md:flex-row h-full"><div class="md:w-1/3 h-[220px] md:h-auto overflow-hidden">${imgHtml}</div><div class="p-8 flex flex-col flex-grow md:w-2/3"><div class="chip-3d mb-4 w-11 h-11"><span class="material-symbols-outlined text-blue-700 filled">${s.icon||'star'}</span></div><h3 class="font-display text-2xl text-slate-900 mb-3 font-bold">${s.title}</h3><ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 flex-grow">${(s.points || []).map(p => `<li class="flex items-start gap-2 text-slate-600 text-sm"><span class="material-symbols-outlined text-green-500 text-base mt-0.5 filled">check_circle</span>${p}</li>`).join('')}</ul><div class="flex gap-3 mt-auto"><a href="https://wa.me/917500208500?text=${msg}" target="_blank" class="flex items-center justify-center gap-2 px-6 rounded-full py-2.5 text-sm font-semibold text-white" style="background:#25D366"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4"/> WhatsApp</a><a href="tel:+917500208500" class="flex items-center justify-center gap-2 px-6 rounded-full py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 transition-all"><span class="material-symbols-outlined text-base filled">call</span> Call Now</a></div></div></div></article>`;
     } else {
-      return `<article class="${articleClass}"><div class="h-[180px] overflow-hidden">${imgHtml}</div><div class="p-6 flex flex-col flex-grow"><div class="chip-3d mb-4 w-11 h-11"><span class="material-symbols-outlined text-blue-300 filled">${s.icon||'star'}</span></div><h3 class="font-display text-2xl text-white mb-3 font-bold">${s.title}</h3><ul class="space-y-2 mb-5 flex-grow">${pointsHtml}</ul><div class="flex gap-3 mt-auto"><a href="https://wa.me/917500208500?text=${msg}" target="_blank" class="flex-1 flex items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white" style="background:#25D366"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4"/> WhatsApp</a><a href="tel:+917500208500" class="flex-1 flex items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 transition-all"><span class="material-symbols-outlined text-base filled">call</span> Call Now</a></div></div></article>`;
+      return `<article class="${articleClass}"><div class="h-[180px] overflow-hidden">${imgHtml}</div><div class="p-6 flex flex-col flex-grow"><div class="chip-3d mb-4 w-11 h-11"><span class="material-symbols-outlined text-blue-700 filled">${s.icon||'star'}</span></div><h3 class="font-display text-2xl text-slate-900 mb-3 font-bold">${s.title}</h3><ul class="space-y-2 mb-5 flex-grow">${pointsHtml}</ul><div class="flex gap-3 mt-auto"><a href="https://wa.me/917500208500?text=${msg}" target="_blank" class="flex-1 flex items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white" style="background:#25D366"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4"/> WhatsApp</a><a href="tel:+917500208500" class="flex-1 flex items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 transition-all"><span class="material-symbols-outlined text-base filled">call</span> Call Now</a></div></div></article>`;
     }
   }).join('');
 }
 
 function showSkeletons(container, count = 6) {
   container.innerHTML = Array(count).fill(0).map(() => `
-    <div class="rounded-2xl border border-white/10 shadow-md overflow-hidden animate-pulse">
+    <div class="rounded-2xl border border-slate-100 shadow-md overflow-hidden animate-pulse">
       <div class="h-[180px] bg-slate-200"></div>
       <div class="p-6"><div class="w-11 h-11 bg-slate-200 rounded-xl mb-4"></div>
         <div class="h-6 bg-slate-200 rounded mb-3 w-3/4"></div>
@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 <section class="px-6 max-w-[1280px] mx-auto pb-16">
 <div class="cta-banner p-12 text-center">
-  <h2 class="font-display text-3xl text-white mb-4">Need a specialized solution?</h2>
-  <p class="text-slate-300 mb-8">Contact our experts for a confidential consultation.</p>
+  <h2 class="font-display text-3xl text-slate-900 mb-4">Need a specialized solution?</h2>
+  <p class="text-slate-600 mb-8">Contact our experts for a confidential consultation.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/917500208500?text=Hello%2C%20I%20need%20a%20consultation" target="_blank" class="btn-gold px-10 py-4 text-sm uppercase tracking-wider inline-flex items-center gap-2">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-5 h-5"/> WhatsApp Us
