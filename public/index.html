@@ -11,20 +11,138 @@
 <link href="css/midnight.css" rel="stylesheet"/>
 <script src="js/tailwind-config.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<style>
+/* ── Cinematic Hero Background ── */
+.hero-cinema-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center 30%;
+  background-attachment: fixed;
+}
+.hero-cinema-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(11,21,39,0.15) 0%,
+    rgba(255,255,255,0.82) 40%,
+    rgba(247,244,238,0.92) 100%
+  );
+}
+
+/* ── Premium Glass Card for Photo Name ── */
+.glass-name-card {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(11,21,39,0.1), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* ── Light Ray Effect ── */
+.light-ray {
+  position: absolute;
+  top: -10%; left: -5%;
+  width: 50%; height: 130%;
+  background: linear-gradient(105deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+  pointer-events: none; z-index: 3;
+  transform: rotate(-5deg);
+  animation: rayShift 12s ease-in-out infinite alternate;
+}
+@keyframes rayShift {
+  from { opacity: 0.6; transform: rotate(-5deg) translateX(0); }
+  to   { opacity: 1;   transform: rotate(-5deg) translateX(30px); }
+}
+
+/* ── Marquee badge chip ── */
+.marquee-chip {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 999px;
+  padding: 6px 16px 6px 8px;
+  box-shadow: 0 2px 12px rgba(11,21,39,0.07);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.marquee-chip:hover {
+  box-shadow: 0 6px 20px rgba(11,21,39,0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Badge pill ── */
+.badge-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.72rem; font-weight: 600;
+  padding: 5px 12px; border-radius: 999px;
+  letter-spacing: 0.04em;
+  border: 1px solid transparent;
+}
+.badge-navy { background: rgba(11,21,39,0.07); color: #0B1527; border-color: rgba(11,21,39,0.12); }
+.badge-gold { background: rgba(201,168,76,0.1); color: #7A5F20;  border-color: rgba(201,168,76,0.3); }
+.badge-green { background: rgba(34,197,94,0.08); color: #166534; border-color: rgba(34,197,94,0.25); }
+
+/* ── Value stats card ── */
+.stat-glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-top: 2px solid rgba(201,168,76,0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(11,21,39,0.06);
+  transition: transform 0.4s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s ease;
+}
+.stat-glass:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(11,21,39,0.1);
+}
+
+/* ── Why Choose Us Section background ── */
+.why-bg {
+  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=70');
+  background-size: cover; background-position: center; background-attachment: fixed;
+  position: relative;
+}
+.why-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(247,244,238,0.97) 0%, rgba(255,251,235,0.94) 100%);
+}
+
+/* ── Gold divider line ── */
+.gold-divider {
+  width: 50px; height: 2px;
+  background: linear-gradient(90deg, #C9A84C, #E8C97A);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+/* ── Scroll reveal ── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s cubic-bezier(0.23,1,0.32,1), transform 0.75s cubic-bezier(0.23,1,0.32,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
 <body class="font-sans antialiased min-h-screen flex flex-col">
 
-<div class="ambient-glow"></div>
+<div class="ambient-glow"><div class="glow-red"></div></div>
 <div id="site-nav"></div>
 
 <main class="relative z-10 flex-grow">
 
-<!-- Hero -->
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
 <section class="hero-section relative overflow-hidden">
-<!-- Premium Office Background with Golden Overlay -->
-<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center bg-fixed z-0"></div>
-<div class="absolute inset-0 bg-gradient-to-br from-white/90 via-amber-50/85 to-amber-200/60 backdrop-blur-[6px] z-[1]"></div>
-<div class="absolute top-0 left-[-10%] w-[60%] h-[100%] bg-amber-300/30 blur-[120px] rounded-full z-[2] pointer-events-none glow-pan-1"></div>
+  <!-- Cinematic Office Background -->
+  <div class="hero-cinema-bg"></div>
+  <!-- Light ray effect -->
+  <div class="light-ray"></div>
+  <!-- Extra warm gold glow left -->
+  <div class="absolute top-0 left-[-8%] w-[55%] h-[100%] bg-amber-200/20 blur-[100px] rounded-full z-[3] pointer-events-none glow-pan-1"></div>
 
 <div class="relative z-10 w-full max-w-[1280px] mx-auto px-3 sm:px-4 pt-24 pb-2 lg:pt-24 lg:pb-12 overflow-x-hidden">
 
@@ -32,33 +150,33 @@
   <div class="flex lg:hidden gap-4 items-start mb-6">
     <!-- Photo - left column on mobile -->
     <div class="flex-shrink-0 w-[150px] sm:w-[170px]">
-      <div class="relative rounded-2xl p-[4px] animated-bg-frame shadow-lg">
+      <div class="relative rounded-2xl p-[4px] animated-bg-frame shadow-xl">
         <div class="rounded-xl overflow-hidden border-2 border-white bg-white">
           <img src="./Founder.jpeg" alt="CA Sameer Ilahi" class="w-full h-auto block"/>
         </div>
       </div>
-      <div class="text-center mt-2 bg-white rounded-lg px-2 py-1.5 border border-slate-100 shadow-sm">
-        <p class="font-display text-base font-bold text-slate-900 uppercase leading-tight">CA Sameer Ilahi</p>
-        <p class="text-blue-700 text-[10px] uppercase tracking-wider font-semibold mt-0.5">Chartered Accountants</p>
+      <div class="text-center mt-2 glass-name-card px-2 py-1.5">
+        <p class="font-display text-base font-bold uppercase leading-tight" style="color:#0B1527">CA Sameer Ilahi</p>
+        <p class="text-xs uppercase tracking-wider font-semibold mt-0.5" style="color:#C9A84C">Chartered Accountants</p>
       </div>
     </div>
 
     <!-- Text - right column on mobile -->
     <div class="flex-1 min-w-0">
-      <p class="text-blue-700 text-[11px] font-bold uppercase tracking-[0.12em] mb-2">&nbsp;</p>
-      <h1 class="font-display text-[30px] sm:text-4xl font-extrabold leading-tight text-slate-900 mb-4">
+      <p class="text-xs font-bold uppercase tracking-[0.12em] mb-2" style="color:#C9A84C">&nbsp;</p>
+      <h1 class="font-display text-[30px] sm:text-4xl font-extrabold leading-tight mb-4" style="color:#0B1527">
         Fresh Eyes,<br/>
         <span class="whitespace-nowrap"><span class="hero-gold-text" id="typewriter"></span><span class="typewriter-cursor">|</span></span>
       </h1>
       <!-- Badges -->
       <div class="flex flex-wrap gap-2 mb-4">
-        <span class="inline-flex items-center gap-1 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold px-2.5 py-1.5 rounded-full">
+        <span class="badge-pill badge-navy">
           <span class="material-symbols-outlined text-sm filled">verified</span> ICAI Certified
         </span>
-        <span class="inline-flex items-center gap-1 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-2.5 py-1.5 rounded-full">
+        <span class="badge-pill badge-gold">
           <span class="material-symbols-outlined text-sm filled">bolt</span> GST Expert
         </span>
-        <span class="inline-flex items-center gap-1 bg-green-50 border border-green-200 text-green-700 text-xs font-semibold px-2.5 py-1.5 rounded-full">
+        <span class="badge-pill badge-green">
           <span class="material-symbols-outlined text-sm filled">support_agent</span> 24/7 Support
         </span>
       </div>
@@ -73,33 +191,34 @@
   </div>
 
   <!-- Mobile: Key Points below -->
-  <div class="flex lg:hidden flex-col gap-3 mb-0 bg-white/70 backdrop-blur-sm rounded-2xl p-4 border border-slate-100 shadow-sm">
-    <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold mb-1">Why Choose Us</p>
+  <div class="flex lg:hidden flex-col gap-3 mb-0 rounded-2xl p-4 border border-amber-200/40 shadow-sm" style="background:rgba(255,255,255,0.75);backdrop-filter:blur(12px)">
+    <p class="text-xs uppercase tracking-widest font-semibold mb-1" style="color:#C9A84C">Why Choose Us</p>
     <div class="flex items-start gap-2">
-      <span class="material-symbols-outlined text-blue-700 text-base mt-0.5 filled">check_circle</span>
-      <p class="text-slate-700 text-[15px]">Freshly Qualified CA with Up-to-Date Knowledge</p>
+      <span class="material-symbols-outlined text-base mt-0.5 filled" style="color:#C9A84C">check_circle</span>
+      <p class="text-sm" style="color:#374151">Freshly Qualified CA with Up-to-Date Knowledge</p>
     </div>
     <div class="flex items-start gap-2">
-      <span class="material-symbols-outlined text-blue-700 text-base mt-0.5 filled">check_circle</span>
-      <p class="text-slate-700 text-[15px]">Expert in Latest Tax Laws &amp; GST Reforms</p>
+      <span class="material-symbols-outlined text-base mt-0.5 filled" style="color:#C9A84C">check_circle</span>
+      <p class="text-sm" style="color:#374151">Expert in Latest Tax Laws &amp; GST Reforms</p>
     </div>
     <div class="flex items-start gap-2">
-      <span class="material-symbols-outlined text-blue-700 text-base mt-0.5 filled">check_circle</span>
-      <p class="text-slate-700 text-[15px]">Modern, Tech-Savvy &amp; 100% Dedicated Approach</p>
+      <span class="material-symbols-outlined text-base mt-0.5 filled" style="color:#C9A84C">check_circle</span>
+      <p class="text-sm" style="color:#374151">Modern, Tech-Savvy &amp; 100% Dedicated Approach</p>
     </div>
   </div>
 
   <!-- DESKTOP: Original 2-col layout -->
   <div class="hidden lg:grid grid-cols-2 gap-12 items-center">
     <div class="fade-in">
-      <p class="text-blue-700 uppercase tracking-[0.2em] text-xs font-bold mb-6">&nbsp;</p>
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 mb-6 min-h-[160px]">
+      <div class="gold-divider"></div>
+      <p class="uppercase tracking-[0.22em] text-xs font-bold mb-6" style="color:#C9A84C">&nbsp;</p>
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 min-h-[160px]" style="color:#0B1527">
         Fresh Eyes,<br/><span><span class="hero-gold-text" id="typewriter-desktop"></span><span class="typewriter-cursor">|</span></span>
       </h1>
-      <ul class="text-slate-600 text-lg leading-relaxed max-w-xl mb-10 space-y-2 text-left">
-        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-sm">check_circle</span> Freshly Qualified CA with Up-to-Date Knowledge</li>
-        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-sm">check_circle</span> Expert in Latest Tax Laws &amp; GST Reforms</li>
-        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-sm">check_circle</span> Modern, Tech-Savvy &amp; 100% Dedicated Approach</li>
+      <ul class="text-lg leading-relaxed max-w-xl mb-10 space-y-2 text-left" style="color:#374151">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm filled" style="color:#C9A84C">check_circle</span> Freshly Qualified CA with Up-to-Date Knowledge</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm filled" style="color:#C9A84C">check_circle</span> Expert in Latest Tax Laws &amp; GST Reforms</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm filled" style="color:#C9A84C">check_circle</span> Modern, Tech-Savvy &amp; 100% Dedicated Approach</li>
       </ul>
       <div class="flex flex-row gap-4 mb-10">
         <a href="contact.html" class="btn-gold px-8 py-4 text-sm uppercase tracking-wider text-center">Book a Consultation</a>
@@ -109,16 +228,16 @@
       </div>
       <!-- Mini Services Marquee (desktop only) -->
       <div class="w-full max-w-[450px] overflow-hidden relative fade-in">
-        <p class="text-[10px] text-slate-500 uppercase tracking-widest mb-3 font-semibold">Our Expertise</p>
+        <p class="text-[10px] uppercase tracking-widest mb-3 font-semibold" style="color:#C9A84C">Our Expertise</p>
         <div class="animate-scroll-left gap-4">
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">Tax Consultancy</span></div>
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">Business Advisory</span></div>
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">GST Solutions</span></div>
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">RVSF Setup</span></div>
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">Tax Consultancy</span></div>
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">Business Advisory</span></div>
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">GST Solutions</span></div>
-          <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-slate-200 pl-2 pr-4 py-1.5 rounded-full shadow-sm cursor-pointer"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold text-slate-800 whitespace-nowrap">RVSF Setup</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">Tax Consultancy</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">Business Advisory</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">GST Solutions</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">RVSF Setup</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">Tax Consultancy</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">Business Advisory</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">GST Solutions</span></div>
+          <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">RVSF Setup</span></div>
         </div>
         <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[var(--bg-pearl)] to-transparent pointer-events-none z-10"></div>
         <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[var(--bg-pearl)] to-transparent pointer-events-none z-10"></div>
@@ -126,14 +245,14 @@
     </div>
     <!-- Desktop Photo -->
     <div class="flex flex-col relative fade-in justify-center items-center w-full max-w-[450px] mx-auto mt-4">
-      <div class="relative w-full rounded-[1.25rem] p-[6px] animated-bg-frame z-10 shadow-[0_20px_50px_rgba(10,25,49,0.15)] mb-4">
+      <div class="relative w-full rounded-[1.25rem] p-[6px] animated-bg-frame z-10 shadow-[0_24px_60px_rgba(11,21,39,0.18)] mb-4">
         <div class="w-full rounded-xl overflow-hidden border-[3px] border-white bg-white shadow-inner">
           <img src="./Founder.jpeg" alt="CA Sameer Ilahi — Founder" class="w-full h-auto block"/>
         </div>
       </div>
-      <div class="text-center z-10 bg-white rounded-lg px-6 py-2 border border-slate-100 shadow-sm relative">
-        <h3 class="font-display text-2xl font-semibold text-slate-900 uppercase">CA Sameer Ilahi</h3>
-        <p class="text-blue-700 text-xs uppercase tracking-[0.15em] font-semibold">Chartered Accountants</p>
+      <div class="text-center z-10 glass-name-card px-6 py-3 relative">
+        <h3 class="font-display text-2xl font-semibold uppercase" style="color:#0B1527">CA Sameer Ilahi</h3>
+        <p class="text-xs uppercase tracking-[0.18em] font-semibold mt-0.5" style="color:#C9A84C">Chartered Accountants</p>
       </div>
     </div>
   </div>
@@ -144,36 +263,38 @@
 <!-- Marquee 1: Trust -->
 <div id="marquee-trust"></div>
 
-<!-- Value Cards -->
+<!-- ══════════════════════════════════
+     VALUE STATS
+══════════════════════════════════ -->
 <section class="py-20 px-6 max-w-[1280px] mx-auto relative">
 <!-- Decorative Blobs -->
-<div class="absolute w-[600px] h-[600px] bg-gradient-to-tr from-pink-100 to-blue-50 rounded-full blur-3xl opacity-60 -z-10 -left-32 top-10 mix-blend-multiply"></div>
-<div class="absolute w-[500px] h-[500px] bg-gradient-to-bl from-yellow-50 to-red-50 rounded-full blur-3xl opacity-50 -z-10 -right-20 bottom-0 mix-blend-multiply"></div>
+<div class="absolute w-[600px] h-[600px] bg-gradient-to-tr from-amber-100/60 to-yellow-50/40 rounded-full blur-3xl opacity-70 -z-10 -left-32 top-10"></div>
+<div class="absolute w-[500px] h-[500px] bg-gradient-to-bl from-amber-50/50 to-white rounded-full blur-3xl opacity-60 -z-10 -right-20 bottom-0"></div>
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center relative z-10">
 
-  <div class="card-3d p-8 flex flex-col items-center">
-    <span class="material-symbols-outlined text-blue-700 text-4xl filled mb-3">verified</span>
-    <p class="font-display text-2xl font-bold text-slate-900 mb-1">ICAI</p>
-    <p class="text-slate-600 text-xs uppercase tracking-[0.15em]">Certified CA</p>
+  <div class="stat-glass p-8 flex flex-col items-center">
+    <span class="material-symbols-outlined text-4xl filled mb-3" style="color:#C9A84C">verified</span>
+    <p class="font-display text-2xl font-bold mb-1" style="color:#0B1527">ICAI</p>
+    <p class="text-xs uppercase tracking-[0.15em]" style="color:#6B7280">Certified CA</p>
   </div>
 
-  <div class="card-3d p-8 flex flex-col items-center">
-    <span class="material-symbols-outlined text-blue-700 text-4xl filled mb-3">bolt</span>
-    <p class="font-display text-2xl font-bold text-slate-900 mb-1">Latest</p>
-    <p class="text-slate-600 text-xs uppercase tracking-[0.15em]">Tax &amp; GST Laws</p>
+  <div class="stat-glass p-8 flex flex-col items-center">
+    <span class="material-symbols-outlined text-4xl filled mb-3" style="color:#C9A84C">bolt</span>
+    <p class="font-display text-2xl font-bold mb-1" style="color:#0B1527">Latest</p>
+    <p class="text-xs uppercase tracking-[0.15em]" style="color:#6B7280">Tax &amp; GST Laws</p>
   </div>
 
-  <div class="card-3d p-8 flex flex-col items-center">
-    <span class="material-symbols-outlined text-blue-700 text-4xl filled mb-3">devices</span>
-    <p class="font-display text-2xl font-bold text-slate-900 mb-1">Digital</p>
-    <p class="text-slate-600 text-xs uppercase tracking-[0.15em]">Tech-Savvy Practice</p>
+  <div class="stat-glass p-8 flex flex-col items-center">
+    <span class="material-symbols-outlined text-4xl filled mb-3" style="color:#C9A84C">devices</span>
+    <p class="font-display text-2xl font-bold mb-1" style="color:#0B1527">Digital</p>
+    <p class="text-xs uppercase tracking-[0.15em]" style="color:#6B7280">Tech-Savvy Practice</p>
   </div>
 
-  <div class="card-3d p-8 flex flex-col items-center">
-    <span class="material-symbols-outlined text-blue-700 text-4xl filled mb-3">support_agent</span>
-    <p class="font-display text-2xl font-bold text-slate-900 mb-1">24 / 7</p>
-    <p class="text-slate-600 text-xs uppercase tracking-[0.15em]">Client Support</p>
+  <div class="stat-glass p-8 flex flex-col items-center">
+    <span class="material-symbols-outlined text-4xl filled mb-3" style="color:#C9A84C">support_agent</span>
+    <p class="font-display text-2xl font-bold mb-1" style="color:#0B1527">24 / 7</p>
+    <p class="text-xs uppercase tracking-[0.15em]" style="color:#6B7280">Client Support</p>
   </div>
 
 </div>
@@ -181,131 +302,133 @@
 
 
 
-<!-- Core Expertise -->
+<!-- ══════════════════════════════════
+     CORE EXPERTISE
+══════════════════════════════════ -->
 <section class="py-24 px-6 max-w-[1280px] mx-auto">
-<div class="text-center mb-16">
-<p class="text-blue-700 uppercase tracking-[0.2em] text-xs font-semibold mb-4">What We Do</p>
-<h2 class="font-display text-4xl md:text-5xl font-semibold text-slate-900 mb-4">Core Expertise</h2>
-<p class="text-slate-600 text-lg max-w-2xl mx-auto">Comprehensive financial solutions engineered for clarity, compliance, and growth.</p>
+<div class="text-center mb-16 reveal">
+  <div class="gold-divider mx-auto"></div>
+  <p class="uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color:#C9A84C">What We Do</p>
+  <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4" style="color:#0B1527">Core Expertise</h2>
+  <p class="text-lg max-w-2xl mx-auto" style="color:#6B7280">Comprehensive financial solutions engineered for clarity, compliance, and growth.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-<div class="tactile-card group cursor-pointer">
+<div class="tactile-card group cursor-pointer reveal">
 <div class="service-card-img">
 <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Audit and Assurance"/>
 </div>
-<div class="chip-3d mb-4"><span class="material-symbols-outlined text-blue-700 filled">fact_check</span></div>
-<h3 class="font-display text-2xl text-slate-900 mb-3">Audit &amp; Assurance</h3>
-<p class="text-slate-600 text-sm leading-relaxed mb-6">Rigorous, independent verification of financial records ensuring absolute integrity and stakeholder trust.</p>
-<a href="services.html" class="inline-flex items-center gap-2 text-blue-700 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<div class="chip-3d mb-4"><span class="material-symbols-outlined filled">fact_check</span></div>
+<h3 class="font-display text-2xl mb-3" style="color:#0B1527">Audit &amp; Assurance</h3>
+<p class="text-sm leading-relaxed mb-6" style="color:#6B7280">Rigorous, independent verification of financial records ensuring absolute integrity and stakeholder trust.</p>
+<a href="services.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all" style="color:#C9A84C">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 
-<div class="tactile-card group cursor-pointer">
+<div class="tactile-card group cursor-pointer reveal">
 <div class="service-card-img">
 <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Tax Consultancy"/>
 </div>
-<div class="chip-3d mb-4"><span class="material-symbols-outlined text-blue-700 filled">account_balance</span></div>
-<h3 class="font-display text-2xl text-slate-900 mb-3">Tax Consultancy</h3>
-<p class="text-slate-600 text-sm leading-relaxed mb-6">Strategic tax planning and compliance designed to optimize liabilities within legal frameworks.</p>
-<a href="services.html" class="inline-flex items-center gap-2 text-blue-700 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<div class="chip-3d mb-4"><span class="material-symbols-outlined filled">account_balance</span></div>
+<h3 class="font-display text-2xl mb-3" style="color:#0B1527">Tax Consultancy</h3>
+<p class="text-sm leading-relaxed mb-6" style="color:#6B7280">Strategic tax planning and compliance designed to optimize liabilities within legal frameworks.</p>
+<a href="services.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all" style="color:#C9A84C">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 
-<div class="tactile-card group cursor-pointer">
+<div class="tactile-card group cursor-pointer reveal">
 <div class="service-card-img">
 <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Business Advisory"/>
 </div>
-<div class="chip-3d mb-4"><span class="material-symbols-outlined text-blue-700 filled">lightbulb</span></div>
-<h3 class="font-display text-2xl text-slate-900 mb-3">Business Advisory</h3>
-<p class="text-slate-600 text-sm leading-relaxed mb-6">Insightful guidance on restructuring, risk management, and strategic market positioning.</p>
-<a href="services.html" class="inline-flex items-center gap-2 text-blue-700 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<div class="chip-3d mb-4"><span class="material-symbols-outlined filled">lightbulb</span></div>
+<h3 class="font-display text-2xl mb-3" style="color:#0B1527">Business Advisory</h3>
+<p class="text-sm leading-relaxed mb-6" style="color:#6B7280">Insightful guidance on restructuring, risk management, and strategic market positioning.</p>
+<a href="services.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all" style="color:#C9A84C">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 
-<div class="tactile-card group cursor-pointer">
+<div class="tactile-card group cursor-pointer reveal">
 <div class="service-card-img">
 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="GST Solutions"/>
 </div>
-<div class="chip-3d mb-4"><span class="material-symbols-outlined text-blue-700 filled">receipt_long</span></div>
-<h3 class="font-display text-2xl text-slate-900 mb-3">GST Solutions</h3>
-<p class="text-slate-600 text-sm leading-relaxed mb-6">End-to-end GST management — registration, filing, audits, and complex reconciliations.</p>
-<a href="services.html" class="inline-flex items-center gap-2 text-blue-700 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<div class="chip-3d mb-4"><span class="material-symbols-outlined filled">receipt_long</span></div>
+<h3 class="font-display text-2xl mb-3" style="color:#0B1527">GST Solutions</h3>
+<p class="text-sm leading-relaxed mb-6" style="color:#6B7280">End-to-end GST management — registration, filing, audits, and complex reconciliations.</p>
+<a href="services.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all" style="color:#C9A84C">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 
-<div class="tactile-card group cursor-pointer">
+<div class="tactile-card group cursor-pointer reveal">
 <div class="service-card-img">
 <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80" alt="Corporate Finance"/>
 </div>
-<div class="chip-3d mb-4"><span class="material-symbols-outlined text-blue-700 filled">trending_up</span></div>
-<h3 class="font-display text-2xl text-slate-900 mb-3">Corporate Finance</h3>
-<p class="text-slate-600 text-sm leading-relaxed mb-6">Expert structuring of capital, M&amp;A, and comprehensive financial health modeling.</p>
-<a href="services.html" class="inline-flex items-center gap-2 text-blue-700 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<div class="chip-3d mb-4"><span class="material-symbols-outlined filled">trending_up</span></div>
+<h3 class="font-display text-2xl mb-3" style="color:#0B1527">Corporate Finance</h3>
+<p class="text-sm leading-relaxed mb-6" style="color:#6B7280">Expert structuring of capital, M&amp;A, and comprehensive financial health modeling.</p>
+<a href="services.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all" style="color:#C9A84C">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 
-<div class="tactile-card group cursor-pointer">
+<div class="tactile-card group cursor-pointer reveal">
 <div class="service-card-img">
 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="RVSF Registration"/>
 </div>
-<div class="chip-3d mb-4"><span class="material-symbols-outlined text-blue-700 filled">directions_car</span></div>
-<h3 class="font-display text-2xl text-slate-900 mb-3">RVSF Registration</h3>
-<p class="text-slate-600 text-sm leading-relaxed mb-6">Complete RVSF licensing and vehicle scrapping facility setup with expert guidance.</p>
-<a href="rvsf.html" class="inline-flex items-center gap-2 text-blue-700 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<div class="chip-3d mb-4"><span class="material-symbols-outlined filled">directions_car</span></div>
+<h3 class="font-display text-2xl mb-3" style="color:#0B1527">RVSF Registration</h3>
+<p class="text-sm leading-relaxed mb-6" style="color:#6B7280">Complete RVSF licensing and vehicle scrapping facility setup with expert guidance.</p>
+<a href="rvsf.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold group-hover:gap-3 transition-all" style="color:#C9A84C">Learn More <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 
 </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="py-16 px-6 relative z-10">
-<!-- Premium Gold & Ivory Background Gradient -->
-<div class="absolute inset-0 bg-gradient-to-br from-amber-50/80 via-white to-amber-100/50 opacity-100 -z-10"></div>
-<div class="max-w-[1280px] mx-auto">
+<!-- ══════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════ -->
+<section class="py-20 px-6 relative z-10 why-bg">
+<div class="relative z-10 max-w-[1280px] mx-auto">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-<div>
-<p class="text-[var(--vibrant-blue)] uppercase tracking-[0.2em] text-xs font-semibold mb-4">Why Choose Us</p>
-<h2 class="font-display text-4xl md:text-5xl font-semibold text-slate-900 mb-8">Young. Qualified.<br/>Always On Your Side.</h2>
-<div class="space-y-4">
-<div class="flex items-start gap-4">
-<div class="chip-3d flex-shrink-0"><span class="material-symbols-outlined text-blue-700 filled">school</span></div>
-<div>
-<h4 class="text-slate-900 font-semibold mb-1">Up-to-Date Knowledge</h4>
-<p class="text-slate-600 text-sm">Freshly trained on the latest Income Tax, GST, ROC filings &amp; ICAI standards — no outdated shortcuts.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="chip-3d flex-shrink-0"><span class="material-symbols-outlined text-blue-700 filled">person_check</span></div>
-<div>
-<h4 class="text-slate-900 font-semibold mb-1">Personal Attention</h4>
-<p class="text-slate-600 text-sm">You deal directly with CA Sameer — not an assistant. Every file gets undivided focus and care.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="chip-3d flex-shrink-0"><span class="material-symbols-outlined text-blue-700 filled">currency_rupee</span></div>
-<div>
-<h4 class="text-slate-900 font-semibold mb-1">Transparent &amp; Affordable</h4>
-<p class="text-slate-600 text-sm">No hidden charges. Clear, honest pricing that fits small businesses, startups &amp; individuals.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-full max-w-md mx-auto lg:ml-auto mt-10 lg:mt-0">
-  <div class="relative rounded-2xl overflow-hidden border-[4px] border-white shadow-2xl bg-white">
-    <!-- Using object-contain and height auto ensures nothing is cut off -->
-    <img src="./office_photo.jpeg" alt="M Sameer & Company Office" class="w-full h-auto max-h-[550px] object-contain object-bottom block"/>
+<div class="reveal">
+  <div class="gold-divider"></div>
+  <p class="uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color:#C9A84C">Why Choose Us</p>
+  <h2 class="font-display text-4xl md:text-5xl font-semibold mb-8" style="color:#0B1527">Young. Qualified.<br/>Always On Your Side.</h2>
+  <div class="space-y-6">
+    <div class="flex items-start gap-4">
+      <div class="chip-3d flex-shrink-0"><span class="material-symbols-outlined filled">school</span></div>
+      <div>
+        <h4 class="font-semibold mb-1" style="color:#0B1527">Up-to-Date Knowledge</h4>
+        <p class="text-sm" style="color:#6B7280">Freshly trained on the latest Income Tax, GST, ROC filings &amp; ICAI standards — no outdated shortcuts.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="chip-3d flex-shrink-0"><span class="material-symbols-outlined filled">person_check</span></div>
+      <div>
+        <h4 class="font-semibold mb-1" style="color:#0B1527">Personal Attention</h4>
+        <p class="text-sm" style="color:#6B7280">You deal directly with CA Sameer — not an assistant. Every file gets undivided focus and care.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="chip-3d flex-shrink-0"><span class="material-symbols-outlined filled">currency_rupee</span></div>
+      <div>
+        <h4 class="font-semibold mb-1" style="color:#0B1527">Transparent &amp; Affordable</h4>
+        <p class="text-sm" style="color:#6B7280">No hidden charges. Clear, honest pricing that fits small businesses, startups &amp; individuals.</p>
+      </div>
+    </div>
   </div>
-  
-
+</div>
+<div class="relative w-full max-w-md mx-auto lg:ml-auto mt-10 lg:mt-0 reveal">
+  <div class="relative rounded-2xl overflow-hidden shadow-2xl" style="border:3px solid rgba(201,168,76,0.4)">
+    <img src="./office_photo.jpeg" alt="M Sameer &amp; Company Office" class="w-full h-auto max-h-[550px] object-contain object-bottom block"/>
+  </div>
 </div>
 </div>
 </div>
 </section>
 
-
-
-<!-- CTA -->
+<!-- ══════════════════════════════════
+     CTA
+══════════════════════════════════ -->
 <section class="py-24 px-6 max-w-[1280px] mx-auto">
-<div class="cta-banner p-12 md:p-16 text-center relative z-10">
-<h2 class="font-display text-3xl md:text-4xl font-semibold text-slate-900 mb-4">Ready to Secure Your Financial Future?</h2>
-<p class="text-slate-600 mb-8 max-w-xl mx-auto">Schedule a confidential consultation with our expert team today.</p>
-<a href="contact.html" class="btn-gold px-10 py-4 text-sm uppercase tracking-wider">Book a Consultation</a>
+<div class="cta-banner p-12 md:p-16 text-center relative z-10 reveal">
+  <div class="gold-divider mx-auto mb-2"></div>
+  <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4">Ready to Secure Your Financial Future?</h2>
+  <p class="mb-8 max-w-xl mx-auto" style="color:rgba(255,255,255,0.7)">Schedule a confidential consultation with our expert team today.</p>
+  <a href="contact.html" class="btn-gold px-10 py-4 text-sm uppercase tracking-wider">Book a Consultation</a>
 </div>
 </section>
 
@@ -313,5 +436,13 @@
 
 <div id="site-footer"></div>
 <script src="js/main.js"></script>
+<script>
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+</script>
 </body>
 </html>
