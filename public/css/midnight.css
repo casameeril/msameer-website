@@ -99,16 +99,18 @@ body {
 .nav-brand-text {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   color: var(--navy-deep);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
 }
 .nav-brand-sub {
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   color: var(--gold);
   font-weight: 700;
+  margin-top: 1px;
 }
 
 .nav-link {

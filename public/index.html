@@ -16,19 +16,20 @@
 /* ── Cinematic Hero Background ── */
 .hero-cinema-bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85');
+  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90');
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 40%;
   background-attachment: fixed;
 }
 .hero-cinema-bg::after {
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(11,21,39,0.15) 0%,
-    rgba(255,255,255,0.82) 40%,
-    rgba(247,244,238,0.92) 100%
+    120deg,
+    rgba(11,21,39,0.55) 0%,
+    rgba(11,21,39,0.25) 35%,
+    rgba(247,244,238,0.82) 65%,
+    rgba(247,244,238,0.96) 100%
   );
 }
 
@@ -164,7 +165,7 @@
     <!-- Text - right column on mobile -->
     <div class="flex-1 min-w-0">
       <p class="text-xs font-bold uppercase tracking-[0.12em] mb-2" style="color:#C9A84C">&nbsp;</p>
-      <h1 class="font-display text-[30px] sm:text-4xl font-extrabold leading-tight mb-4" style="color:#0B1527">
+      <h1 class="font-display text-[30px] sm:text-4xl font-extrabold leading-tight mb-4" style="color:#060C18;text-shadow:0 1px 3px rgba(0,0,0,0.08)">
         Fresh Eyes,<br/>
         <span class="whitespace-nowrap"><span class="hero-gold-text" id="typewriter"></span><span class="typewriter-cursor">|</span></span>
       </h1>
@@ -212,10 +213,10 @@
     <div class="fade-in">
       <div class="gold-divider"></div>
       <p class="uppercase tracking-[0.22em] text-xs font-bold mb-6" style="color:#C9A84C">&nbsp;</p>
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 min-h-[160px]" style="color:#0B1527">
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 min-h-[160px]" style="color:#060C18;text-shadow:0 2px 8px rgba(0,0,0,0.08)">
         Fresh Eyes,<br/><span><span class="hero-gold-text" id="typewriter-desktop"></span><span class="typewriter-cursor">|</span></span>
       </h1>
-      <ul class="text-lg leading-relaxed max-w-xl mb-10 space-y-2 text-left" style="color:#374151">
+      <ul class="text-lg leading-relaxed max-w-xl mb-10 space-y-2 text-left" style="color:#1A2535">
         <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm filled" style="color:#C9A84C">check_circle</span> Freshly Qualified CA with Up-to-Date Knowledge</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm filled" style="color:#C9A84C">check_circle</span> Expert in Latest Tax Laws &amp; GST Reforms</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm filled" style="color:#C9A84C">check_circle</span> Modern, Tech-Savvy &amp; 100% Dedicated Approach</li>
