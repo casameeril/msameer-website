@@ -26,10 +26,10 @@
   position: absolute; inset: 0;
   background: linear-gradient(
     115deg,
-    rgba(6,12,24,0.78) 0%,
-    rgba(6,12,24,0.55) 40%,
-    rgba(6,12,24,0.10) 65%,
-    rgba(247,244,238,0.12) 100%
+    rgba(247,244,238,0.92) 0%,
+    rgba(255,251,235,0.85) 45%,
+    rgba(255,255,255,0.55) 75%,
+    rgba(255,255,255,0.15) 100%
   );
 }
 
@@ -210,30 +210,27 @@
 
   <!-- DESKTOP: Original 2-col layout -->
   <div class="hidden lg:grid grid-cols-2 gap-12 items-center">
-    <!-- LEFT: Text panel with glass backing for readability -->
     <div class="fade-in relative">
-      <!-- Frosted dark glass behind all text -->
-      <div class="absolute inset-0 rounded-2xl -z-10" style="background:rgba(6,12,24,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.08)"></div>
-      <div class="p-8 lg:p-10">
+      <div class="p-2">
       <div class="gold-divider"></div>
-      <p class="uppercase tracking-[0.22em] text-xs font-bold mb-6" style="color:#E8C97A">&nbsp;</p>
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 min-h-[160px]" style="color:#FFFFFF;text-shadow:0 3px 24px rgba(0,0,0,0.6),0 1px 4px rgba(0,0,0,0.9)">
+      <p class="uppercase tracking-[0.22em] text-xs font-bold mb-6" style="color:#C9A84C">&nbsp;</p>
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 min-h-[160px]" style="color:#0A1931;text-shadow:none">
         Fresh Eyes,<br/><span><span class="hero-gold-text" id="typewriter-desktop"></span><span class="typewriter-cursor">|</span></span>
       </h1>
-      <ul class="text-lg leading-relaxed max-w-xl mb-10 space-y-3 text-left" style="color:rgba(255,255,255,0.92)">
-        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-base filled flex-shrink-0" style="color:#E8C97A">check_circle</span><span style="font-weight:500"> Freshly Qualified CA with Up-to-Date Knowledge</span></li>
-        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-base filled flex-shrink-0" style="color:#E8C97A">check_circle</span><span style="font-weight:500"> Expert in Latest Tax Laws &amp; GST Reforms</span></li>
-        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-base filled flex-shrink-0" style="color:#E8C97A">check_circle</span><span style="font-weight:500"> Modern, Tech-Savvy &amp; 100% Dedicated Approach</span></li>
+      <ul class="text-lg leading-relaxed max-w-xl mb-10 space-y-3 text-left" style="color:#0A1931">
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-base filled flex-shrink-0" style="color:#C9A84C">check_circle</span><span style="font-weight:600"> Freshly Qualified CA with Up-to-Date Knowledge</span></li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-base filled flex-shrink-0" style="color:#C9A84C">check_circle</span><span style="font-weight:600"> Expert in Latest Tax Laws &amp; GST Reforms</span></li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-base filled flex-shrink-0" style="color:#C9A84C">check_circle</span><span style="font-weight:600"> Modern, Tech-Savvy &amp; 100% Dedicated Approach</span></li>
       </ul>
       <div class="flex flex-row gap-4 mb-10">
         <a href="contact.html" class="btn-gold px-8 py-4 text-sm uppercase tracking-wider text-center">Book a Consultation</a>
-        <a href="services.html" class="btn-outline px-8 py-4 text-sm uppercase tracking-wider text-center flex items-center justify-center gap-2" style="color:#FFFFFF;border-color:rgba(255,255,255,0.5)">
+        <a href="services.html" class="btn-outline px-8 py-4 text-sm uppercase tracking-wider text-center flex items-center justify-center gap-2">
           Explore Services <span class="material-symbols-outlined text-lg">arrow_forward</span>
         </a>
       </div>
       <!-- Mini Services Marquee (desktop only) -->
       <div class="w-full max-w-[450px] overflow-hidden relative fade-in">
-        <p class="text-[10px] uppercase tracking-widest mb-3 font-semibold" style="color:#E8C97A">Our Expertise</p>
+        <p class="text-[10px] uppercase tracking-widest mb-3 font-semibold" style="color:#C9A84C">Our Expertise</p>
         <div class="animate-scroll-left gap-4">
           <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">Tax Consultancy</span></div>
           <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">Business Advisory</span></div>
@@ -244,8 +241,8 @@
           <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">GST Solutions</span></div>
           <div class="marquee-chip"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&q=80" class="w-7 h-7 rounded-full object-cover"/><span class="text-xs font-semibold whitespace-nowrap" style="color:#0B1527">RVSF Setup</span></div>
         </div>
-        <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[rgba(6,12,24,0.55)] to-transparent pointer-events-none z-10"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[rgba(6,12,24,0.55)] to-transparent pointer-events-none z-10"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[var(--bg-pearl)] to-transparent pointer-events-none z-10"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[var(--bg-pearl)] to-transparent pointer-events-none z-10"></div>
       </div>
       </div>
     </div>
